@@ -1,0 +1,22 @@
+{
+  "homeMainText": "Top-up your balance of your loved ones quickly, safely and easily.",
+  "btnComenzar": "start",
+  "btnIngresar": "login",
+  "ayuda": "help",
+  "btnNext": "Next",
+  "btnJump": "Skip",
+  "btnRegister": "Sign In",
+  "btnTopUp": "Top Up",
+  "flow1_1":"International Service",
+  "flow1_2":"Send recharges to the cell phone of any country wherever you are.",
+  "flow2_1":"Fast and easy",
+  "flow2_2":"Recharge the cell phones of your relatives in 3 simple steps.",
+  "flow3_1":"Safe and reliable",
+  "flow3_2":"Payments are made through a protected and safe environment.",
+  "flow4_1":"Who are you going to send the recharge?",
+  "btnCel":"Top up",
+  "form_num":"Enter the number",
+  "btnTopUpC":"Start Top up",
+  "pais":"Country",
+  "search_country":"Search for country"
+}
