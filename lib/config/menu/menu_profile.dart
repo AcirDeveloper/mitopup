@@ -37,6 +37,11 @@ const appMenuProfile = <MenuProfile>[
     link: '/profile/help_center',
   ),
   MenuProfile(
+    title: 'Notificationes',
+    subtitle: 'Notificaciones',
+    link: '/profile/accept_notifications',
+  ),
+  MenuProfile(
     title: 'Idioma',
     subtitle: 'Idioma',
     link: '/profile/language',

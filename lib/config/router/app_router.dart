@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:mitopup/presentation/screens/home/home_page.dart';
+import 'package:mitopup/presentation/screens/profile/items/accept_notifications_screen.dart';
 import 'package:mitopup/presentation/screens/screens.dart';
 
 import '../../presentation/screens/profile/items/help_center_screen.dart';
@@ -22,7 +23,7 @@ final appRouter = GoRouter(
 
     GoRoute(
       path: '/home',
-      name: HomePage.name,
+      name: HomeDash.name,
       builder: (context, state) => HomeDash(
         changePage: (int id) {},
       ),
@@ -80,6 +81,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/profile/help_center',
       builder: (context, state) => const HelpCenterScreen(),
+    ),
+    GoRoute(
+      path: '/profile/accept_notifications',
+      builder: (context, state) => const AcceptNotificationsScreen(),
     ),
     GoRoute(
       path: '/profile/language',

@@ -17,7 +17,7 @@ class LangScreen extends StatefulWidget {
 class LangScreenState extends State<LangScreen> {
   String _selectedLanguage = 'Español (MX)';
 
-  void _saveLanguageAndPop() {
+  void saveLanguageAndPop() {
     Navigator.pop(context, _selectedLanguage);
   }
 
@@ -127,7 +127,7 @@ class LangScreenState extends State<LangScreen> {
               padding: const EdgeInsets.fromLTRB(16.0, 15.0, 16.0, 30.0),
               child: BlueButton(
                 onPressed: () {
-                  _saveLanguageAndPop();
+                  saveLanguageAndPop();
                 },
                 buttonText: capitalize(Literals.of(context).save),
               ),
