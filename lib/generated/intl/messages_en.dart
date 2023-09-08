@@ -20,84 +20,87 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "Hello, ${name}";
+  static String m0(name) => "Hello ${name}!";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "_locale": MessageLookupByLibrary.simpleMessage("en"),
         "addNew": MessageLookupByLibrary.simpleMessage("Add New"),
-        "ayuda": MessageLookupByLibrary.simpleMessage("help"),
-        "ayudaTitle": MessageLookupByLibrary.simpleMessage("HelpDesk"),
         "bottomBar1": MessageLookupByLibrary.simpleMessage("Home"),
-        "bottomBar2": MessageLookupByLibrary.simpleMessage("Top Up"),
-        "bottomBar3": MessageLookupByLibrary.simpleMessage("Promo"),
+        "bottomBar2": MessageLookupByLibrary.simpleMessage("refills"),
+        "bottomBar3": MessageLookupByLibrary.simpleMessage("Promos"),
         "bottomBar4": MessageLookupByLibrary.simpleMessage("Profile"),
-        "btnCel": MessageLookupByLibrary.simpleMessage("Top up"),
-        "btnComenzar": MessageLookupByLibrary.simpleMessage("start"),
-        "btnIngresar": MessageLookupByLibrary.simpleMessage("login"),
-        "btnJump": MessageLookupByLibrary.simpleMessage("Skip"),
+        "btnCel": MessageLookupByLibrary.simpleMessage("Recharge cell phone"),
+        "btnJump": MessageLookupByLibrary.simpleMessage("Jump"),
+        "btnLogin": MessageLookupByLibrary.simpleMessage("login"),
         "btnNext": MessageLookupByLibrary.simpleMessage("Next"),
-        "btnRegister": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "btnTopUp": MessageLookupByLibrary.simpleMessage("Top Up"),
-        "btnTopUpC": MessageLookupByLibrary.simpleMessage("Start Top up"),
-        "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
-        "contactos": MessageLookupByLibrary.simpleMessage("My Contacts"),
+        "btnRegister": MessageLookupByLibrary.simpleMessage("Register me"),
+        "btnStart": MessageLookupByLibrary.simpleMessage("start"),
+        "btnTopUp": MessageLookupByLibrary.simpleMessage("Do Reload"),
+        "btnTopUpC": MessageLookupByLibrary.simpleMessage("Start reload"),
+        "contactUs": MessageLookupByLibrary.simpleMessage("Contact us"),
+        "contacts": MessageLookupByLibrary.simpleMessage("My contacts"),
+        "country":
+            MessageLookupByLibrary.simpleMessage("Country of the cell phone"),
         "flow1_1":
-            MessageLookupByLibrary.simpleMessage("International Service"),
+            MessageLookupByLibrary.simpleMessage("International service"),
         "flow1_2": MessageLookupByLibrary.simpleMessage(
             "Send recharges to the cell phone of any country wherever you are."),
-        "flow2_1": MessageLookupByLibrary.simpleMessage("Fast and easy"),
+        "flow2_1": MessageLookupByLibrary.simpleMessage("Easy and fast"),
         "flow2_2": MessageLookupByLibrary.simpleMessage(
-            "Recharge the cell phones of your relatives in 3 simple steps."),
-        "flow3_1": MessageLookupByLibrary.simpleMessage("Safe and reliable"),
+            "Recharge your family\'s cell phones in 3 simple steps."),
+        "flow3_1": MessageLookupByLibrary.simpleMessage("Secure and reliable"),
         "flow3_2": MessageLookupByLibrary.simpleMessage(
-            "Payments are made through a protected and safe environment."),
+            "Payments are made through a protected and secure environment."),
         "flow4_1": MessageLookupByLibrary.simpleMessage(
-            "Who are you going to send the recharge?"),
-        "formAdjuntar": MessageLookupByLibrary.simpleMessage("Attach files"),
-        "formAyuda": MessageLookupByLibrary.simpleMessage("Contact Form"),
+            "Who are you going to send the recharge to?"),
+        "formAttach": MessageLookupByLibrary.simpleMessage("Attach files"),
         "formEmail": MessageLookupByLibrary.simpleMessage("Email"),
         "formEmailError":
-            MessageLookupByLibrary.simpleMessage("Please enter your email"),
+            MessageLookupByLibrary.simpleMessage("Please, write your email"),
         "formEmailPlaceholder":
-            MessageLookupByLibrary.simpleMessage("Your email"),
-        "formEnviar": MessageLookupByLibrary.simpleMessage("Send message"),
-        "formMensaje": MessageLookupByLibrary.simpleMessage("Message"),
-        "formMensajeError":
-            MessageLookupByLibrary.simpleMessage("Please enter your message"),
-        "formMensajePlaceholder":
-            MessageLookupByLibrary.simpleMessage("Your message"),
-        "formNombre": MessageLookupByLibrary.simpleMessage("Name"),
-        "formNombreError":
-            MessageLookupByLibrary.simpleMessage("Please enter your name"),
-        "formNombrePlaceholder":
-            MessageLookupByLibrary.simpleMessage("Your name"),
+            MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "formHelp": MessageLookupByLibrary.simpleMessage("Contact form"),
+        "formMessage": MessageLookupByLibrary.simpleMessage("Message"),
+        "formMessageError":
+            MessageLookupByLibrary.simpleMessage("Please write your message"),
+        "formMessagePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Write your message"),
+        "formName": MessageLookupByLibrary.simpleMessage("Name"),
+        "formNameError":
+            MessageLookupByLibrary.simpleMessage("Please write your name"),
+        "formNamePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Enter your name"),
+        "formSend": MessageLookupByLibrary.simpleMessage("Send message"),
         "form_num": MessageLookupByLibrary.simpleMessage("Enter the number"),
         "fromTitle":
-            MessageLookupByLibrary.simpleMessage("Please complete the form."),
-        "guardar": MessageLookupByLibrary.simpleMessage("Save"),
+            MessageLookupByLibrary.simpleMessage("Please fill out the form."),
         "hello": m0,
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "helpTitle": MessageLookupByLibrary.simpleMessage("Help Center"),
         "homeMainText": MessageLookupByLibrary.simpleMessage(
-            "Top-up your balance of your loved ones quickly, safely and easily."),
-        "idioma": MessageLookupByLibrary.simpleMessage("Language"),
+            "Recharge your loved ones\' phones quickly, safely and easily."),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "loginHint": MessageLookupByLibrary.simpleMessage("Your mobile number"),
         "loginPlaceholder":
             MessageLookupByLibrary.simpleMessage("Mobile number"),
-        "loginTitle":
-            MessageLookupByLibrary.simpleMessage("Enter your number to login"),
-        "masAyuda": MessageLookupByLibrary.simpleMessage("Need more help?"),
-        "notificaciones": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "loginTitle": MessageLookupByLibrary.simpleMessage(
+            "Indicate your mobile number to login"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
-        "pais": MessageLookupByLibrary.simpleMessage("Country"),
-        "recargasRecientes":
-            MessageLookupByLibrary.simpleMessage("Recent Top UPs"),
+        "plusHelp":
+            MessageLookupByLibrary.simpleMessage("Do you need more help?"),
+        "recentRecharges":
+            MessageLookupByLibrary.simpleMessage("Recent Recharges"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search_country":
-            MessageLookupByLibrary.simpleMessage("Search for country"),
+            MessageLookupByLibrary.simpleMessage("Search country"),
         "successButton": MessageLookupByLibrary.simpleMessage("Back to Home"),
         "successLead": MessageLookupByLibrary.simpleMessage(
             "We will contact you via email as soon as possible."),
         "successTitle": MessageLookupByLibrary.simpleMessage("Form submitted"),
         "titlePass":
-            MessageLookupByLibrary.simpleMessage("Retrieve your password"),
-        "verTodo": MessageLookupByLibrary.simpleMessage("All")
+            MessageLookupByLibrary.simpleMessage("Recover your password"),
+        "verTodo": MessageLookupByLibrary.simpleMessage("See all")
       };
 }

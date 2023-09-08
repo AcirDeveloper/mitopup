@@ -50,10 +50,20 @@ class Literals {
     return Localizations.of<Literals>(context, Literals);
   }
 
-  /// `Recarga el celular de tus seres queridos de manera rápida, segura y sencilla.`
+  /// `es`
+  String get _locale {
+    return Intl.message(
+      'es',
+      name: '_locale',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.`
   String get homeMainText {
     return Intl.message(
-      'Recarga el celular de tus seres queridos de manera rápida, segura y sencilla.',
+      'Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.',
       name: 'homeMainText',
       desc: '',
       args: [],
@@ -61,40 +71,40 @@ class Literals {
   }
 
   /// `comenzar`
-  String get btnComenzar {
+  String get btnStart {
     return Intl.message(
       'comenzar',
-      name: 'btnComenzar',
+      name: 'btnStart',
       desc: '',
       args: [],
     );
   }
 
-  /// `ingresar`
-  String get btnIngresar {
+  /// `Iniciar sesión`
+  String get btnLogin {
     return Intl.message(
-      'ingresar',
-      name: 'btnIngresar',
+      'Iniciar sesión',
+      name: 'btnLogin',
       desc: '',
       args: [],
     );
   }
 
-  /// `ayuda`
-  String get ayuda {
+  /// `Ayuda`
+  String get help {
     return Intl.message(
-      'ayuda',
-      name: 'ayuda',
+      'Ayuda',
+      name: 'help',
       desc: '',
       args: [],
     );
   }
 
   /// `Idioma`
-  String get idioma {
+  String get language {
     return Intl.message(
       'Idioma',
-      name: 'idioma',
+      name: 'language',
       desc: '',
       args: [],
     );
@@ -120,20 +130,20 @@ class Literals {
     );
   }
 
-  /// `Registrarme`
+  /// `Registrarse`
   String get btnRegister {
     return Intl.message(
-      'Registrarme',
+      'Registrarse',
       name: 'btnRegister',
       desc: '',
       args: [],
     );
   }
 
-  /// `Hacer Recarga`
+  /// `Recargar`
   String get btnTopUp {
     return Intl.message(
-      'Hacer Recarga',
+      'Recargar',
       name: 'btnTopUp',
       desc: '',
       args: [],
@@ -170,30 +180,30 @@ class Literals {
     );
   }
 
-  /// `Haz recargas a los celulares de tus familiares en 3 simples pasos.`
+  /// `Recarga los celulares de tu familia en 3 simples pasos.`
   String get flow2_2 {
     return Intl.message(
-      'Haz recargas a los celulares de tus familiares en 3 simples pasos.',
+      'Recarga los celulares de tu familia en 3 simples pasos.',
       name: 'flow2_2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Seguro y fiable`
+  /// `Seguro y confiable`
   String get flow3_1 {
     return Intl.message(
-      'Seguro y fiable',
+      'Seguro y confiable',
       name: 'flow3_1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Los pagos se hacen a través de un entorno protegido y seguro.`
+  /// `Los pagos se realizan a través de un entorno protegido y seguro.`
   String get flow3_2 {
     return Intl.message(
-      'Los pagos se hacen a través de un entorno protegido y seguro.',
+      'Los pagos se realizan a través de un entorno protegido y seguro.',
       name: 'flow3_2',
       desc: '',
       args: [],
@@ -210,10 +220,10 @@ class Literals {
     );
   }
 
-  /// `Celular de la recarga`
+  /// `recargar celular`
   String get btnCel {
     return Intl.message(
-      'Celular de la recarga',
+      'recargar celular',
       name: 'btnCel',
       desc: '',
       args: [],
@@ -230,10 +240,10 @@ class Literals {
     );
   }
 
-  /// `Comenzar recarga`
+  /// `Iniciar recarga`
   String get btnTopUpC {
     return Intl.message(
-      'Comenzar recarga',
+      'Iniciar recarga',
       name: 'btnTopUpC',
       desc: '',
       args: [],
@@ -241,10 +251,10 @@ class Literals {
   }
 
   /// `País del celular`
-  String get pais {
+  String get country {
     return Intl.message(
       'País del celular',
-      name: 'pais',
+      name: 'country',
       desc: '',
       args: [],
     );
@@ -260,31 +270,31 @@ class Literals {
     );
   }
 
-  /// `Centro de Ayuda`
-  String get ayudaTitle {
+  /// `Centro de ayuda`
+  String get helpTitle {
     return Intl.message(
-      'Centro de Ayuda',
-      name: 'ayudaTitle',
+      'Centro de ayuda',
+      name: 'helpTitle',
       desc: '',
       args: [],
     );
   }
 
   /// `Formulario de contacto`
-  String get formAyuda {
+  String get formHelp {
     return Intl.message(
       'Formulario de contacto',
-      name: 'formAyuda',
+      name: 'formHelp',
       desc: '',
       args: [],
     );
   }
 
-  /// `¿Necesitas más ayuda?`
-  String get masAyuda {
+  /// `Mas información`
+  String get plusHelp {
     return Intl.message(
-      '¿Necesitas más ayuda?',
-      name: 'masAyuda',
+      'Mas información',
+      name: 'plusHelp',
       desc: '',
       args: [],
     );
@@ -300,10 +310,10 @@ class Literals {
     );
   }
 
-  /// `Por favor, completa el formulario.`
+  /// `Por favor rellena el formulario.`
   String get fromTitle {
     return Intl.message(
-      'Por favor, completa el formulario.',
+      'Por favor rellena el formulario.',
       name: 'fromTitle',
       desc: '',
       args: [],
@@ -311,59 +321,59 @@ class Literals {
   }
 
   /// `Nombre`
-  String get formNombre {
+  String get formName {
     return Intl.message(
       'Nombre',
-      name: 'formNombre',
+      name: 'formName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Introduce tu nombre`
-  String get formNombrePlaceholder {
+  /// `Escribe tu nombre`
+  String get formNamePlaceholder {
     return Intl.message(
-      'Introduce tu nombre',
-      name: 'formNombrePlaceholder',
+      'Escribe tu nombre',
+      name: 'formNamePlaceholder',
       desc: '',
       args: [],
     );
   }
 
   /// `Por favor, escribe tu nombre`
-  String get formNombreError {
+  String get formNameError {
     return Intl.message(
       'Por favor, escribe tu nombre',
-      name: 'formNombreError',
+      name: 'formNameError',
       desc: '',
       args: [],
     );
   }
 
-  /// `E-mail`
+  /// `Correo electrónico`
   String get formEmail {
     return Intl.message(
-      'E-mail',
+      'Correo electrónico',
       name: 'formEmail',
       desc: '',
       args: [],
     );
   }
 
-  /// `Introduce tu correo`
+  /// `Escribe tu correo electrónico`
   String get formEmailPlaceholder {
     return Intl.message(
-      'Introduce tu correo',
+      'Escribe tu correo electrónico',
       name: 'formEmailPlaceholder',
       desc: '',
       args: [],
     );
   }
 
-  /// `Por favor, escribe tu correo`
+  /// `Por favor, escribe tu correo electrónico`
   String get formEmailError {
     return Intl.message(
-      'Por favor, escribe tu correo',
+      'Por favor, escribe tu correo electrónico',
       name: 'formEmailError',
       desc: '',
       args: [],
@@ -371,50 +381,50 @@ class Literals {
   }
 
   /// `Mensaje`
-  String get formMensaje {
+  String get formMessage {
     return Intl.message(
       'Mensaje',
-      name: 'formMensaje',
+      name: 'formMessage',
       desc: '',
       args: [],
     );
   }
 
   /// `Escribe tu mensaje`
-  String get formMensajePlaceholder {
+  String get formMessagePlaceholder {
     return Intl.message(
       'Escribe tu mensaje',
-      name: 'formMensajePlaceholder',
+      name: 'formMessagePlaceholder',
       desc: '',
       args: [],
     );
   }
 
   /// `Por favor, escribe tu mensaje`
-  String get formMensajeError {
+  String get formMessageError {
     return Intl.message(
       'Por favor, escribe tu mensaje',
-      name: 'formMensajeError',
+      name: 'formMessageError',
       desc: '',
       args: [],
     );
   }
 
-  /// `Adjuntar archivos`
-  String get formAdjuntar {
+  /// `Adjuntar archivo`
+  String get formAttach {
     return Intl.message(
-      'Adjuntar archivos',
-      name: 'formAdjuntar',
+      'Adjuntar archivo',
+      name: 'formAttach',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enviar mensaje`
-  String get formEnviar {
+  /// `Enviar`
+  String get formSend {
     return Intl.message(
-      'Enviar mensaje',
-      name: 'formEnviar',
+      'Enviar',
+      name: 'formSend',
       desc: '',
       args: [],
     );
@@ -430,50 +440,50 @@ class Literals {
     );
   }
 
-  /// `Te contactaremos a través de correo electrónico lo antes posible.`
+  /// `Nos pondremos en contacto con usted por correo electrónico lo antes posible.`
   String get successLead {
     return Intl.message(
-      'Te contactaremos a través de correo electrónico lo antes posible.',
+      'Nos pondremos en contacto con usted por correo electrónico lo antes posible.',
       name: 'successLead',
       desc: '',
       args: [],
     );
   }
 
-  /// `Volver a Inicio`
+  /// `Volver al inicio`
   String get successButton {
     return Intl.message(
-      'Volver a Inicio',
+      'Volver al inicio',
       name: 'successButton',
       desc: '',
       args: [],
     );
   }
 
-  /// `Indica tu número de celular para iniciar sesión`
+  /// `Indique su número de móvil para iniciar sesión`
   String get loginTitle {
     return Intl.message(
-      'Indica tu número de celular para iniciar sesión',
+      'Indique su número de móvil para iniciar sesión',
       name: 'loginTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Número de celular`
+  /// `Introduce tu número de móvil`
   String get loginPlaceholder {
     return Intl.message(
-      'Número de celular',
+      'Introduce tu número de móvil',
       name: 'loginPlaceholder',
       desc: '',
       args: [],
     );
   }
 
-  /// `Tu nº de celular`
+  /// `Tú número de teléfono`
   String get loginHint {
     return Intl.message(
-      'Tu nº de celular',
+      'Tú número de teléfono',
       name: 'loginHint',
       desc: '',
       args: [],
@@ -490,20 +500,20 @@ class Literals {
     );
   }
 
-  /// `Recupera tu contraseña`
+  /// `recupera tu contraseña`
   String get titlePass {
     return Intl.message(
-      'Recupera tu contraseña',
+      'recupera tu contraseña',
       name: 'titlePass',
       desc: '',
       args: [],
     );
   }
 
-  /// `¡Hola, {name}!`
+  /// `Hola {name}!`
   String hello(Object name) {
     return Intl.message(
-      '¡Hola, $name!',
+      'Hola $name!',
       name: 'hello',
       desc: '',
       args: [name],
@@ -511,20 +521,20 @@ class Literals {
   }
 
   /// `Guardar`
-  String get guardar {
+  String get save {
     return Intl.message(
       'Guardar',
-      name: 'guardar',
+      name: 'save',
       desc: '',
       args: [],
     );
   }
 
-  /// `Mis contactos`
-  String get contactos {
+  /// `Contactos`
+  String get contacts {
     return Intl.message(
-      'Mis contactos',
-      name: 'contactos',
+      'Contactos',
+      name: 'contacts',
       desc: '',
       args: [],
     );
@@ -580,11 +590,11 @@ class Literals {
     );
   }
 
-  /// `Recargas Recientes`
-  String get recargasRecientes {
+  /// `Recargas recientes`
+  String get recentRecharges {
     return Intl.message(
-      'Recargas Recientes',
-      name: 'recargasRecientes',
+      'Recargas recientes',
+      name: 'recentRecharges',
       desc: '',
       args: [],
     );
@@ -601,10 +611,10 @@ class Literals {
   }
 
   /// `Notificaciones`
-  String get notificaciones {
+  String get notifications {
     return Intl.message(
       'Notificaciones',
-      name: 'notificaciones',
+      name: 'notifications',
       desc: '',
       args: [],
     );
