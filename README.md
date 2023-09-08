@@ -8,3 +8,4 @@
 2. Cambiar las variables de entorno en el .env (KaneCode DB)
 
 "# mitopup" 
+"# mitopuo" 
