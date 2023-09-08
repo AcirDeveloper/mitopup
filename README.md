@@ -1,4 +1,4 @@
-![BackgroundApp](../mitopup/assets/images/png/logo.png)
+![BackgroundApp](https://github.com/AcirDeveloper/mitopup/blob/main/assets/images/png/logo.png)
 
 - Recharge the cell phone of your loved ones quickly, safely, and easily.
 
