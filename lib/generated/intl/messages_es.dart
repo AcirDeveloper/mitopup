@@ -31,12 +31,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "bottomBar3": MessageLookupByLibrary.simpleMessage("Promos"),
         "bottomBar4": MessageLookupByLibrary.simpleMessage("Perfil"),
         "btnCel": MessageLookupByLibrary.simpleMessage("recargar celular"),
+        "btnGetInto": MessageLookupByLibrary.simpleMessage("Ingresar"),
         "btnJump": MessageLookupByLibrary.simpleMessage("Saltar"),
         "btnLogin": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
         "btnNext": MessageLookupByLibrary.simpleMessage("Siguiente"),
         "btnRegister": MessageLookupByLibrary.simpleMessage("Registrarse"),
         "btnStart": MessageLookupByLibrary.simpleMessage("comenzar"),
-        "btnTopUp": MessageLookupByLibrary.simpleMessage("Recargar"),
+        "btnTopUp": MessageLookupByLibrary.simpleMessage("Hacer Recarga"),
         "btnTopUpC": MessageLookupByLibrary.simpleMessage("Iniciar recarga"),
         "contactUs": MessageLookupByLibrary.simpleMessage("Contáctanos"),
         "contacts": MessageLookupByLibrary.simpleMessage("Contactos"),
@@ -53,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Los pagos se realizan a través de un entorno protegido y seguro."),
         "flow4_1": MessageLookupByLibrary.simpleMessage(
             "¿A quién le vas a enviar la recarga?"),
+        "forgetCode":
+            MessageLookupByLibrary.simpleMessage("¿Olvidaste tu código?"),
         "formAttach": MessageLookupByLibrary.simpleMessage("Adjuntar archivo"),
         "formEmail": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "formEmailError": MessageLookupByLibrary.simpleMessage(

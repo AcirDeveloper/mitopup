@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:mitopup/config/theme/theme.dart';
-import 'package:mitopup/generated/l10n.dart';
 
 class NuevoContacto extends StatefulWidget {
   const NuevoContacto({super.key});
@@ -16,14 +15,14 @@ class _NuevoContactoState extends State<NuevoContacto> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: DashAppBarDelete(
-        title: Literals.of(context).language,
-        deleteOnPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      body: const Padding(
+    return const Scaffold(
+      // appBar: DashAppBarDelete(
+      //   title: 'ejemplo';// Literals.of(context).language,
+      //   deleteOnPressed: () {
+      //     Navigator.pop(context);
+      //   },
+      // ),
+      body: Padding(
         padding: EdgeInsets.only(top: 45),
         child: Column(
           children: [

@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:mitopup/presentation/screens/home/home_page.dart';
+import 'package:mitopup/presentation/screens/home/initial_screen.dart';
 import 'package:mitopup/presentation/screens/profile/items/accept_notifications_screen.dart';
 import 'package:mitopup/presentation/screens/screens.dart';
 
@@ -7,39 +7,14 @@ import '../../presentation/screens/profile/items/help_center_screen.dart';
 import '../../presentation/screens/profile/items/invite_friends_screen.dart';
 import '../../presentation/screens/profile/items/language_screen.dart';
 import '../../presentation/screens/profile/items/payment_methods_screen.dart';
-import '../../presentation/screens/recharges/recargar.dart';
+import '../../presentation/widgets/tests/example_form.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',
-      name: HomePage.name,
-      builder: (context, state) => HomePage(
-        selectedLanguage: '',
-        changeLanguage: (String language) {},
-      ),
-    ),
-
-    GoRoute(
-      path: '/home',
-      name: HomeDash.name,
-      builder: (context, state) => HomeDash(
-        changePage: (int id) {},
-      ),
-    ),
-
-    GoRoute(
-      path: '/recharges',
-      name: RecargasDash.name,
-      builder: (context, state) => const RecargasDash(
-        userId: '',
-      ),
-    ),
-
-    GoRoute(
-      path: '/promos',
-      builder: (context, state) => const PromosPage(),
+      builder: (context, state) => const InitialScreen(),
     ),
 
     GoRoute(
@@ -60,7 +35,7 @@ final appRouter = GoRouter(
     // Rutas de perfil
     GoRoute(
       path: '/profile',
-      builder: (context, state) => const PerfilDash(),
+      builder: (context, state) => const ProfileScreen(),
     ),
     GoRoute(
       path: '/profile/edit_info',
@@ -88,13 +63,16 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/profile/language',
-      builder: (context, state) => const LangScreen(),
+      builder: (context, state) => LanguageSelectorBottomSheet(
+        selectedLanguage: 'ES',
+        changeLanguage: (String p1) {},
+      ),
     ),
 
     // Rutas de recargas
     GoRoute(
       path: '/Mitopup/RecargasPage',
-      builder: (context, state) => const RecargasPage(),
+      builder: (context, state) => const ContactForm(),
     )
   ],
 );

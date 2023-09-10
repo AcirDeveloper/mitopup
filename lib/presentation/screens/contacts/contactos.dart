@@ -7,8 +7,9 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:mitopup/config/theme/theme.dart';
-import 'package:mitopup/domain/entities/entities.dart';
-import 'package:mitopup/generated/l10n.dart'; // Importa la librería 'dart:math' para usar la clase 'Random'
+
+import '../../../data/entities/contact_entity.dart';
+// Importa la librería 'dart:math' para usar la clase 'Random'
 
 // Todo: contactos.- idContacto, nombreContacto, telefono
 
@@ -40,18 +41,7 @@ class _ContactosState extends State<Contactos> {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       List<ContactEntity> contactos = [];
-      for (var item in data) {
-        contactos.add(ContactEntity(
-          idContact: item['idContacto'],
-          nameContact: item['nombreContacto'],
-          phoneContact: item['telefono'],
-          userId: 0,
-          userName: '',
-          phone: '',
-          email: '',
-          color: '',
-        ));
-      }
+
       setState(() {
         _contactos = contactos;
         _isLoading = false;
@@ -65,7 +55,7 @@ class _ContactosState extends State<Contactos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: LightAppBarAyuda(
-        title: Literals.of(context).contacts,
+        title: 'ejemplo', //Literals.of(context).contacts,
         leadingOnPressed: () {
           Navigator.pop(context);
         },

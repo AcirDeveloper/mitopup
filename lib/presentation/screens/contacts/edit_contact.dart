@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:mitopup/config/theme/theme.dart';
-import 'package:mitopup/generated/l10n.dart';
 
 class EditarContacto extends StatefulWidget {
   const EditarContacto({super.key});
@@ -16,14 +15,14 @@ class _EditarContactoState extends State<EditarContacto> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: LightAppBarAyuda(
-        title: Literals.of(context).language,
-        leadingOnPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      body: const Padding(
+    return const Scaffold(
+      // appBar: LightAppBarAyuda(
+      //   title: 'ejemplo';// Literals.of(context).language,
+      //   leadingOnPressed: () {
+      //     Navigator.pop(context);
+      //   },
+      // ),
+      body: Padding(
         padding: EdgeInsets.only(top: 45),
         child: Column(
           children: [

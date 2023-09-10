@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:mitopup/domain/entities/entities.dart';
+import 'package:mitopup/data/entities/entities.dart';
 import 'dart:convert';
 
 import 'package:mitopup/generated/l10n.dart';
@@ -23,41 +23,6 @@ class RecargasDashState extends State<RecargasDash> {
   List<RechargesEntity> recargas = [];
   String ordenSeleccionado = 'Más recientes';
   List<String> monthTitles = []; // Lista para almacenar títulos de mes
-
-  @override
-  void initState() {
-    super.initState();
-    _fetchRechargesEntitys().then((_) {
-      _ordenarRechargesEntitys(); // Ordenar los datos después de cargar
-    });
-  }
-
-  Future<void> _fetchRechargesEntitys() async {
-    final url = Uri.parse(
-        'http://5.78.79.129:8080/app.getHistorialRechargesEntitys?idUser=${widget.userId}');
-    final response = await http.get(url);
-
-    if (response.statusCode == 200) {
-      final List<dynamic> responseData = json.decode(response.body);
-      // ignore: avoid_print
-      print(responseData);
-      final List<RechargesEntity> fetchedRechargesEntitys =
-          responseData.map((data) {
-        return RechargesEntity(
-          date: data['fecha'],
-          contact: data['contacto'],
-          amount: data['cantidad'],
-        );
-      }).toList();
-
-      setState(() {
-        recargas = fetchedRechargesEntitys;
-      });
-    } else {
-      // ignore: avoid_print
-      print('Error al cargar las recargas');
-    }
-  }
 
   void _ordenarRechargesEntitys() {
     setState(() {
@@ -324,7 +289,7 @@ class RecargasDashState extends State<RecargasDash> {
                                         ),
                                       ),
                                       Text(
-                                        recarga.amount,
+                                        recarga.amount as String,
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,

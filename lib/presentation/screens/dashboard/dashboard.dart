@@ -30,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
 
   Future<void> _fetchUserData(String userId) async {
     final url =
-        Uri.parse('http://5.161.187.55:8080/app.getUserName?userId=$userId');
+        Uri.parse('http://5.78.79.129:8080/app.getUserName?userId=$userId');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
@@ -57,8 +57,8 @@ class _DashboardState extends State<Dashboard> {
       body: IndexedStack(
         index: _currentIndex,
         children: [
-          Center(
-            child: HomeDash(changePage: _changePage),
+          const Center(
+            child: Placeholder(),
           ),
           Center(
             child: RecargasDash(userId: widget.userId),
@@ -67,7 +67,7 @@ class _DashboardState extends State<Dashboard> {
             child: PromosPage(),
           ),
           const Center(
-            child: PerfilDash(),
+            child: ProfileScreen(),
           ),
         ],
       ),
@@ -86,7 +86,7 @@ class _DashboardState extends State<Dashboard> {
 }
 
 void main() {
-  String userId = '4';
+  String userId = '43';
   runApp(MaterialApp(
     home: Dashboard(userId: userId),
   ));

@@ -80,6 +80,16 @@ class Literals {
     );
   }
 
+  /// `Ingresar`
+  String get btnGetInto {
+    return Intl.message(
+      'Ingresar',
+      name: 'btnGetInto',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Iniciar sesión`
   String get btnLogin {
     return Intl.message(
@@ -140,10 +150,10 @@ class Literals {
     );
   }
 
-  /// `Recargar`
+  /// `Hacer Recarga`
   String get btnTopUp {
     return Intl.message(
-      'Recargar',
+      'Hacer Recarga',
       name: 'btnTopUp',
       desc: '',
       args: [],
@@ -615,6 +625,16 @@ class Literals {
     return Intl.message(
       'Notificaciones',
       name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Olvidaste tu código?`
+  String get forgetCode {
+    return Intl.message(
+      '¿Olvidaste tu código?',
+      name: 'forgetCode',
       desc: '',
       args: [],
     );

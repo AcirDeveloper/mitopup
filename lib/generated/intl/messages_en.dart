@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bottomBar3": MessageLookupByLibrary.simpleMessage("Promos"),
         "bottomBar4": MessageLookupByLibrary.simpleMessage("Profile"),
         "btnCel": MessageLookupByLibrary.simpleMessage("Recharge cell phone"),
+        "btnGetInto": MessageLookupByLibrary.simpleMessage("Get into"),
         "btnJump": MessageLookupByLibrary.simpleMessage("Jump"),
         "btnLogin": MessageLookupByLibrary.simpleMessage("login"),
         "btnNext": MessageLookupByLibrary.simpleMessage("Next"),
@@ -54,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Payments are made through a protected and secure environment."),
         "flow4_1": MessageLookupByLibrary.simpleMessage(
             "Who are you going to send the recharge to?"),
+        "forgetCode": MessageLookupByLibrary.simpleMessage("Forgot your code?"),
         "formAttach": MessageLookupByLibrary.simpleMessage("Attach files"),
         "formEmail": MessageLookupByLibrary.simpleMessage("Email"),
         "formEmailError":

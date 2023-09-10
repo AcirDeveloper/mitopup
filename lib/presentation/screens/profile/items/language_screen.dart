@@ -3,18 +3,19 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:mitopup/generated/l10n.dart';
 
 import '../../../../config/config.dart';
-import '../../contacts/contactos.dart';
-import '../../dashboard/dashboard.dart';
-import '../../screens.dart';
 
-class LangScreen extends StatefulWidget {
-  const LangScreen({super.key});
+class LanguageSelectorBottomSheet extends StatefulWidget {
+  const LanguageSelectorBottomSheet(
+      {super.key,
+      required String selectedLanguage,
+      required Function(String p1) changeLanguage});
 
   @override
-  LangScreenState createState() => LangScreenState();
+  State<LanguageSelectorBottomSheet> createState() =>
+      _LanguageSelectorBottomSheet();
 }
 
-class LangScreenState extends State<LangScreen> {
+class _LanguageSelectorBottomSheet extends State<LanguageSelectorBottomSheet> {
   String _selectedLanguage = 'Español (MX)';
 
   void saveLanguageAndPop() {
@@ -76,60 +77,6 @@ class LangScreenState extends State<LangScreen> {
                     ),
                   ),
                 ],
-              ),
-            ),
-            //Aquí empiezan los botones falsos
-            Padding(
-              padding: const EdgeInsets.fromLTRB(13.0, 12.0, 13.0, 27.0),
-              child: SizedBox(
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const Dashboard(userId: "4")),
-                        );
-                      },
-                      child: const Text('Dashboard'),
-                    ),
-                    const SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Notificaciones()),
-                        );
-                      },
-                      child: const Text('notificaciones'),
-                    ),
-                    const SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Contactos()),
-                        );
-                      },
-                      child: const Text('contactos'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            //HAsta aquí llegan los botones falsos
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 15.0, 16.0, 30.0),
-              child: BlueButton(
-                onPressed: () {
-                  saveLanguageAndPop();
-                },
-                buttonText: capitalize(Literals.of(context).save),
               ),
             ),
           ],

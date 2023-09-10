@@ -2,6 +2,7 @@
   "_locale": "en",
   "homeMainText": "Recharge your loved ones' phones quickly, safely and easily.",
   "btnStart": "start",
+  "btnGetInto": "Get into",
   "btnLogin": "login",
   "help": "Help",
   "language": "Language",
@@ -55,5 +56,6 @@
   "bottomBar4": "Profile",
   "recentRecharges": "Recent Recharges",
   "addNew": "Add New",
-  "notifications": "Notifications"
+  "notifications": "Notifications",
+  "forgetCode": "Forgot your code?"
 }

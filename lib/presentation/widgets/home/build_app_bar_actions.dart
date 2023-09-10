@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mitopup/presentation/screens/profile/items/language_screen.dart';
-
-import '../../../config/theme/others.dart';
-import '../../../generated/l10n.dart';
 import '../../screens/help/ayuda.dart';
 
 List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
@@ -17,7 +14,11 @@ List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LangScreen()),
+                MaterialPageRoute(
+                    builder: (context) => LanguageSelectorBottomSheet(
+                          selectedLanguage: '',
+                          changeLanguage: (String p1) {},
+                        )),
               );
             },
             child: Row(
@@ -47,16 +48,16 @@ List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
                     builder: (context) => const CentroAyudaPage()),
               );
             },
-            child: Row(
+            child: const Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.help,
                   color: Colors.white,
                 ),
-                const SizedBox(width: 4),
+                SizedBox(width: 4),
                 Text(
-                  capitalize(Literals.of(context).btnStart),
-                  style: const TextStyle(color: Colors.white),
+                  'Comenzar', // capitalize(Literals.of(context).btnStart),
+                  style: TextStyle(color: Colors.white),
                 ),
               ],
             ),

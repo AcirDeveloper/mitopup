@@ -1,11 +1,13 @@
-![BackgroundApp](https://github.com/AcirDeveloper/mitopup/blob/main/assets/images/png/logo.png)
+<h1 align="center">
+   <img src="https://github.com/AcirDeveloper/mitopup/blob/main/assets/images/png/logo.png" alt="Mitopup Logo">
+</h1>
 
-- Recharge the cell phone of your loved ones quickly, safely, and easily.
+---
+_Recharge the cell phone of your loved ones quickly, safely, and easily._
 
 ## Description
 
-Mitopup is a Flutter-based application that allows users to recharge the cell phones of their loved ones seamlessly. It
-offers a safe and user-friendly experience for mobile recharge.
+Mitopup is a Flutter-based application that allows users to recharge the cell phones of their loved ones seamlessly. It offers a safe and user-friendly experience for mobile recharge.
 
 ## Getting Started
 
@@ -39,7 +41,7 @@ Before you begin, make sure you have the following installed:
 To run the Mitopup application, use the following command:
 
 ```bash
-flutter run
+flutter pub get && flutter run
 ```
 
 ## Dependencies
@@ -66,13 +68,3 @@ Mitopup is open-source software licensed under the [MIT License](LICENSE).
 
 If you have any questions or need assistance, feel free to contact us
 at [contact@mitopup.com](mailto:contact@mitopup.com).
-
----
-
-**Disclaimer**: This is a sample README file. Please customize it according to your project's specific details.
-
-Remember to replace `"https://github.com/your-username/mitopup.git"` with the actual URL of your Mitopup repository, and
-update the contact email address accordingly.
-
-You can also add images to your README by placing them in a folder within your project directory (e.g., `docs/images/`)
-and then referencing them in your README using Markdown syntax:

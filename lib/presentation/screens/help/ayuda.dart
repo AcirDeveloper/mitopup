@@ -6,8 +6,6 @@ import 'dart:convert';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:mitopup/config/theme/theme.dart';
 import 'package:mitopup/generated/l10n.dart';
-
-import '../home/home_page.dart';
 import '../screens.dart';
 
 class CentroAyudaPage extends StatefulWidget {
@@ -72,14 +70,7 @@ class _CentroAyudaPageState extends State<CentroAyudaPage> {
       appBar: LightAppBarAyuda(
         title: Literals.of(context).helpTitle,
         leadingOnPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => HomePage(
-                      selectedLanguage: '',
-                      changeLanguage: (String) {},
-                    )),
-          );
+          // Todo: implementa la lógica para cancelar y volver a la página anterior
         },
       ),
       body: Container(
@@ -93,9 +84,10 @@ class _CentroAyudaPageState extends State<CentroAyudaPage> {
                   itemBuilder: (context, index) {
                     final pregunta = _preguntas[index];
                     return ExpansionPanelList(
-                      elevation: 0, // Quita la sombra del ExpansionPanelList
-                      expandedHeaderPadding: EdgeInsets
-                          .zero, // Quita el espacio entre el header expandido y el cuerpo
+                      elevation: 0,
+                      // Quita la sombra del ExpansionPanelList
+                      expandedHeaderPadding: EdgeInsets.zero,
+                      // Quita el espacio entre el header expandido y el cuerpo
                       expansionCallback: (panelIndex, isExpanded) =>
                           _handleExpand(index, isExpanded),
                       children: [

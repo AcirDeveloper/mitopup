@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../config/theme/buttons.dart';
 import '../../../config/theme/images.dart';
 import '../../../config/theme/others.dart';
-import '../../../generated/l10n.dart';
 
-Widget buildHomeContent(BuildContext context, bool _isBottomSheetOpen,
-    AnimationController _animationController, Animation<Offset> _logoOffset, Animation<Offset> _slideAnimation,
-    Function _showOnboardingBottomSheet, Function _showIngresar) {
+Widget buildHomeContent(
+    BuildContext context,
+    bool _isBottomSheetOpen,
+    AnimationController _animationController,
+    Animation<Offset> _logoOffset,
+    Animation<Offset> _slideAnimation,
+    Function _showOnboardingBottomSheet,
+    Function _showIngresar) {
   return Container(
     padding: const EdgeInsets.all(25.0),
     decoration: const BoxDecoration(
@@ -21,7 +25,7 @@ Widget buildHomeContent(BuildContext context, bool _isBottomSheetOpen,
       curve: Curves.easeInOut,
       padding: EdgeInsets.only(
         // 130 : 450
-        top: _isBottomSheetOpen ? 130 : 50,
+        top: _isBottomSheetOpen ? 130 : 450,
       ),
       child: SizedBox(
         width: double.infinity,
@@ -41,9 +45,10 @@ Widget buildHomeContent(BuildContext context, bool _isBottomSheetOpen,
             const SizedBox(height: 20),
             SlideTransition(
               position: _slideAnimation,
-              child: Text(
-                Literals.of(context).homeMainText,
-                style: const TextStyle(
+              child: const Text(
+                'Bienvenido a Mi Tópup',
+                // Literals.of(context).homeMainText,
+                style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                 ),
@@ -52,24 +57,25 @@ Widget buildHomeContent(BuildContext context, bool _isBottomSheetOpen,
             ),
             const SizedBox(height: 50),
             WhiteButton(
-              onPressed: () {
-                _animationController.forward();
-                _showOnboardingBottomSheet();
-              },
-              buttonText: capitalize(Literals.of(context).btnStart),
-            ),
+                onPressed: () {
+                  _animationController.forward();
+                  _showOnboardingBottomSheet();
+                },
+                buttonText:
+                    'Comenzar' //capitalize(Literals.of(context).btnStart),
+                ),
             const SizedBox(height: 16),
             BlueButton(
-              onPressed: () {
-                _animationController.forward();
-                _showIngresar();
-              },
-              buttonText: capitalize(Literals.of(context).btnNext),
-            ),
+                onPressed: () {
+                  _animationController.forward();
+                  _showIngresar();
+                },
+                buttonText:
+                    'Ingresar' //capitalize(Literals.of(context).btnNext),
+                ),
           ],
         ),
       ),
     ),
   );
 }
-

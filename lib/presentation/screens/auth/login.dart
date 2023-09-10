@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
-import 'package:mitopup/generated/l10n.dart';
 
 import '../../../config/config.dart';
+import '../../../generated/l10n.dart';
 import '../dashboard/dashboard.dart';
 import '../screens.dart';
 
@@ -235,9 +235,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     );
                   },
-                  child: const Text(
-                    '¿Has olvidado tu código?',
-                    style: TextStyle(
+                  child: Text(
+                    Literals.of(context).forgetCode,
+                    style: const TextStyle(
                       decoration: TextDecoration.underline,
                       color: Colors.blue,
                     ),

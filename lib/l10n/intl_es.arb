@@ -2,13 +2,14 @@
   "_locale": "es",
   "homeMainText": "Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.",
   "btnStart": "comenzar",
+  "btnGetInto": "Ingresar",
   "btnLogin": "Iniciar sesión",
   "help": "Ayuda",
   "language": "Idioma",
   "btnNext": "Siguiente",
   "btnJump": "Saltar",
   "btnRegister": "Registrarse",
-  "btnTopUp": "Recargar",
+  "btnTopUp": "Hacer Recarga",
   "flow1_1": "Servicio internacional",
   "flow1_2": "Envía recargas al celular de cualquier país estés donde estés.",
   "flow2_1": "Fácil y rápido",
@@ -55,5 +56,6 @@
   "bottomBar4": "Perfil",
   "recentRecharges": "Recargas recientes",
   "addNew": "Agregar nuevo",
-  "notifications": "Notificaciones"
+  "notifications": "Notificaciones",
+  "forgetCode": "¿Olvidaste tu código?"
 }

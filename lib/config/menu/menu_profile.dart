@@ -12,38 +12,33 @@ class MenuProfile {
 
 const appMenuProfile = <MenuProfile>[
   MenuProfile(
-    title: 'Editar información',
-    subtitle: 'Editar Información',
+    title: 'Edit Information',
+    subtitle: '',
     link: '/profile/edit_info',
   ),
   MenuProfile(
-    title: 'Cambiar pin de acceso',
-    subtitle: 'pin de acceso',
+    title: 'Change PIN',
+    subtitle: '',
     link: '/profile/change_pin',
   ),
   MenuProfile(
-    title: 'Invita a tus amigos',
-    subtitle: 'Invita a tus amigos',
+    title: 'Friends invitation',
+    subtitle: '',
     link: '/profile/invite_friends',
   ),
   MenuProfile(
-    title: 'Métodos de pago',
-    subtitle: 'Métodos de pago',
+    title: 'Payment Methods',
+    subtitle: '',
     link: '/profile/payment_methods',
   ),
   MenuProfile(
-    title: 'Centro de ayuda',
-    subtitle: 'Centro de ayuda',
+    title: 'Help Center',
+    subtitle: '',
     link: '/profile/help_center',
   ),
   MenuProfile(
-    title: 'Notificationes',
-    subtitle: 'Notificaciones',
+    title: 'Other Settings',
+    subtitle: 'Notifications & Language',
     link: '/profile/accept_notifications',
-  ),
-  MenuProfile(
-    title: 'Idioma',
-    subtitle: 'Idioma',
-    link: '/profile/language',
   ),
 ];
