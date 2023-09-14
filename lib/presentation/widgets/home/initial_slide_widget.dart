@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mitopup/config/config.dart';
-import 'package:mitopup/config/helpers/show_onboarding_bottom_sheet.dart';
-import 'package:mitopup/config/helpers/show_getinto_sheet.dart';
 import 'package:mitopup/generated/l10n.dart';
 
 class InitialSlideWidget extends StatelessWidget {
@@ -69,7 +67,7 @@ class InitialSlideWidget extends StatelessWidget {
               animationController,
             );
           },
-          buttonText: capitalize(Literals.of(context).btnRegister),
+          buttonText: capitalize(Literals.of(context).btnGetInto),
         ),
       ],
     );

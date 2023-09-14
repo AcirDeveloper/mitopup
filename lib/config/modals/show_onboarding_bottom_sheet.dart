@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mitopup/config/helpers/show_recharges_bottom_sheet.dart';
 
 import '../../presentation/screens/home/steps.dart';
+import '../config.dart';
 
 void showOnboardingBottomSheet(
   BuildContext context,
@@ -27,23 +27,21 @@ void showOnboardingBottomSheet(
           return SlideTransition(
             position: slideAnimation,
             child: FractionallySizedBox(
-              heightFactor: 0.6, // Ajusta la altura como desees
+              heightFactor: 0.6,
               child: Container(
                 padding: const EdgeInsets.all(0),
                 decoration: const BoxDecoration(
-                  // Cambia el color de fondo según tus necesidades
                   color: Colors.transparent,
                 ),
                 child: StepsBottom(
                   onStep3Complete: () {
                     Navigator.pop(context);
-                    // Abre el nuevo BottomSheet (RecargasPage)
                     showRechargesBottomSheet(
                         context,
                         updateStateCallback,
                         updateBottomSheetContextIndex,
                         slideAnimation,
-                        animationController); // Asegúrate de ajustar esto
+                        animationController);
                   },
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mitopup/presentation/screens/profile/items/language_screen.dart';
-import '../../screens/help/ayuda.dart';
+
+import '../../screens/profile/items/help_center_screen.dart';
 
 List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
   return [
@@ -15,9 +16,9 @@ List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => LanguageSelectorBottomSheet(
-                          selectedLanguage: '',
-                          changeLanguage: (String p1) {},
+                    builder: (context) => const LanguageSelectorBottomSheet(
+                        //selectedLanguage: '',
+                        // changeLanguage: (String p1) {},
                         )),
               );
             },
@@ -45,7 +46,7 @@ List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const CentroAyudaPage()),
+                    builder: (context) => const HelpCenterScreen()),
               );
             },
             child: const Row(

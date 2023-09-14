@@ -8,19 +8,19 @@ import 'dart:math';
 
 import 'package:mitopup/config/theme/theme.dart';
 
-import '../../../data/entities/contact_entity.dart';
+import '../../../domain/data.dart';
 // Importa la librería 'dart:math' para usar la clase 'Random'
 
 // Todo: contactos.- idContacto, nombreContacto, telefono
 
-class Contactos extends StatefulWidget {
-  const Contactos({super.key});
+class Contacts extends StatefulWidget {
+  const Contacts({super.key});
 
   @override
-  _ContactosState createState() => _ContactosState();
+  _ContactsState createState() => _ContactsState();
 }
 
-class _ContactosState extends State<Contactos> {
+class _ContactsState extends State<Contacts> {
   List<ContactEntity> _contactos = [];
   bool _isLoading = true;
 

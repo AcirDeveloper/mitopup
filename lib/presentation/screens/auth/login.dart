@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
+import 'package:mitopup/presentation/screens/recovery/recovery_pass.dart';
 
 import '../../../config/config.dart';
 import '../../../generated/l10n.dart';
@@ -228,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RecuperarPass(
+                        builder: (context) => RecoveryPassScreen(
                           idPais: widget.idPais,
                           phoneNumber: widget.phoneNumber,
                         ),

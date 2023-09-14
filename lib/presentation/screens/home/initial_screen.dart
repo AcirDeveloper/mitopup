@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mitopup/config/config.dart';
 import 'package:mitopup/generated/l10n.dart';
-import 'package:mitopup/presentation/widgets/personal/initial_slide_widget.dart';
-
-import '../../../config/helpers/show_language_bottom_sheet.dart';
+import 'package:mitopup/presentation/widgets/home/initial_slide_widget.dart';
+import '../profile/items/help_center_screen.dart';
 
 class InitialScreen extends StatefulWidget {
-  final String? selectedLanguage;
-  final Function(String)? changeLanguage;
-
-  const InitialScreen({
-    super.key,
-    this.selectedLanguage,
-    this.changeLanguage,
-  });
+  const InitialScreen({super.key});
 
   @override
   State<InitialScreen> createState() => _InitialScreenState();
@@ -26,6 +19,7 @@ class _InitialScreenState extends State<InitialScreen>
   late Animation<Offset> logoOffset;
   bool isBottomSheetOpen = false;
   int bottomSheetContextIndex = 0;
+  String _selectedLanguage = 'English (US)';
 
   void updateBottomSheetState() {
     setState(() {
@@ -39,12 +33,18 @@ class _InitialScreenState extends State<InitialScreen>
     });
   }
 
+  void saveLanguageAndPop(BuildContext context) {
+    // final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    // languageProvider.changeLanguage(_selectedLanguage);
+    Navigator.pop(context, _selectedLanguage);
+  }
+
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 400),
     );
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0),
@@ -85,22 +85,21 @@ class _InitialScreenState extends State<InitialScreen>
                       updateBottomSheetContextIndex,
                       _slideAnimation,
                       _animationController,
-                      'Mexico (MX)',
-                      (selectedLanguage) {},
                     );
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.language,
                         color: Colors.white,
                       ),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 4),
                       Text(
-                        widget.selectedLanguage ?? 'Mexico (MX)',
-                        style: const TextStyle(color: Colors.white),
+                        'Mexico (MX)',
+                        // widget.selectedLanguage ?? 'Mexico (MX)',
+                        style: TextStyle(color: Colors.white),
                       ),
-                      const Icon(
+                      Icon(
                         Icons.arrow_drop_down,
                         color: Colors.white,
                       ),
@@ -109,7 +108,7 @@ class _InitialScreenState extends State<InitialScreen>
                 ),
                 GestureDetector(
                   onTap: () {
-                    //Ayuda
+                    GoRouter.of(context).pushNamed(HelpCenterScreen.name);
                   },
                   child: Row(
                     children: [
@@ -119,7 +118,7 @@ class _InitialScreenState extends State<InitialScreen>
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        capitalize(Literals.of(context).help),
+                        capitalize(Literals.of(context).btnHelp),
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],

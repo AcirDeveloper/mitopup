@@ -8,11 +8,13 @@ import 'images.dart';
 class WhiteButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String buttonText;
+  final double elevation;
 
   const WhiteButton({
     Key? key,
     required this.onPressed,
     required this.buttonText,
+    this.elevation = 2.0,
   }) : super(key: key);
 
   @override
@@ -31,6 +33,7 @@ class WhiteButton extends StatelessWidget {
               width: 1,
             ),
           ),
+          elevation: elevation,
         ),
         child: Text(
           buttonText,

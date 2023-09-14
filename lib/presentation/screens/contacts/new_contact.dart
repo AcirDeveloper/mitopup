@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:mitopup/config/theme/theme.dart';
 
-class NuevoContacto extends StatefulWidget {
-  const NuevoContacto({super.key});
+class NewContact extends StatefulWidget {
+  const NewContact({super.key});
 
   @override
-  _NuevoContactoState createState() => _NuevoContactoState();
+  _NewContactState createState() => _NewContactState();
 }
 
-class _NuevoContactoState extends State<NuevoContacto> {
+class _NewContactState extends State<NewContact> {
   final String _selectedLanguage = 'Español (MX)';
 
   @override

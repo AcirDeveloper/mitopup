@@ -117,7 +117,7 @@ class _StepsBottomState extends State<StepsBottom> {
               ),
               const SizedBox(height: 16),
               Text(
-                Literals.of(context).flow1_1,
+                Literals.of(context).textFlow1_1,
                 style: const TextStyle(
                   color: Color(0xFF34405F),
                   fontSize: 18,
@@ -133,7 +133,7 @@ class _StepsBottomState extends State<StepsBottom> {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  Literals.of(context).flow1_2,
+                  Literals.of(context).textFlow1_2,
                   style: const TextStyle(
                     color: Color(0xFF34405F),
                     fontSize: 16,
@@ -160,7 +160,7 @@ class _StepsBottomState extends State<StepsBottom> {
               ),
               const SizedBox(height: 16),
               Text(
-                Literals.of(context).flow2_1,
+                Literals.of(context).textFlow2_1,
                 style: const TextStyle(
                   color: Color(0xFF34405F),
                   fontSize: 18,
@@ -176,7 +176,7 @@ class _StepsBottomState extends State<StepsBottom> {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  Literals.of(context).flow2_2,
+                  Literals.of(context).textFlow2_2,
                   style: const TextStyle(
                     color: Color(0xFF34405F),
                     fontSize: 16,
@@ -203,7 +203,7 @@ class _StepsBottomState extends State<StepsBottom> {
               ),
               const SizedBox(height: 16),
               Text(
-                Literals.of(context).flow3_1,
+                Literals.of(context).textFlow3_1,
                 style: const TextStyle(
                   color: Color(0xFF34405F),
                   fontSize: 18,
@@ -219,7 +219,7 @@ class _StepsBottomState extends State<StepsBottom> {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  Literals.of(context).flow3_2,
+                  Literals.of(context).textFlow3_2,
                   style: const TextStyle(
                     color: Color(0xFF34405F),
                     fontSize: 16,
@@ -246,7 +246,7 @@ class _StepsBottomState extends State<StepsBottom> {
               ),
               const SizedBox(height: 16),
               Text(
-                Literals.of(context).flow1_1,
+                Literals.of(context).textFlow1_1,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -254,7 +254,7 @@ class _StepsBottomState extends State<StepsBottom> {
               ),
               const SizedBox(height: 16),
               Text(
-                Literals.of(context).flow1_2,
+                Literals.of(context).textFlow1_2,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,

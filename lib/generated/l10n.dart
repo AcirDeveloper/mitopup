@@ -60,11 +60,11 @@ class Literals {
     );
   }
 
-  /// `Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.`
-  String get homeMainText {
+  /// `Comenzar recarga`
+  String get btnBegin {
     return Intl.message(
-      'Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.',
-      name: 'homeMainText',
+      'Comenzar recarga',
+      name: 'btnBegin',
       desc: '',
       args: [],
     );
@@ -101,20 +101,10 @@ class Literals {
   }
 
   /// `Ayuda`
-  String get help {
+  String get btnHelp {
     return Intl.message(
       'Ayuda',
-      name: 'help',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Idioma`
-  String get language {
-    return Intl.message(
-      'Idioma',
-      name: 'language',
+      name: 'btnHelp',
       desc: '',
       args: [],
     );
@@ -130,11 +120,31 @@ class Literals {
     );
   }
 
+  /// `Idioma`
+  String get btnLanguage {
+    return Intl.message(
+      'Idioma',
+      name: 'btnLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Saltar`
   String get btnJump {
     return Intl.message(
       'Saltar',
       name: 'btnJump',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `recargar celular`
+  String get btnCel {
+    return Intl.message(
+      'recargar celular',
+      name: 'btnCel',
       desc: '',
       args: [],
     );
@@ -160,81 +170,151 @@ class Literals {
     );
   }
 
+  /// `Iniciar recarga`
+  String get btnTopUpC {
+    return Intl.message(
+      'Iniciar recarga',
+      name: 'btnTopUpC',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inicio`
+  String get bottomBar1 {
+    return Intl.message(
+      'Inicio',
+      name: 'bottomBar1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recargas`
+  String get bottomBar2 {
+    return Intl.message(
+      'Recargas',
+      name: 'bottomBar2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promos`
+  String get bottomBar3 {
+    return Intl.message(
+      'Promos',
+      name: 'bottomBar3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Perfil`
+  String get bottomBar4 {
+    return Intl.message(
+      'Perfil',
+      name: 'bottomBar4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.`
+  String get homeMainText {
+    return Intl.message(
+      'Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla.',
+      name: 'homeMainText',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Servicio internacional`
-  String get flow1_1 {
+  String get textFlow1_1 {
     return Intl.message(
       'Servicio internacional',
-      name: 'flow1_1',
+      name: 'textFlow1_1',
       desc: '',
       args: [],
     );
   }
 
   /// `Envía recargas al celular de cualquier país estés donde estés.`
-  String get flow1_2 {
+  String get textFlow1_2 {
     return Intl.message(
       'Envía recargas al celular de cualquier país estés donde estés.',
-      name: 'flow1_2',
+      name: 'textFlow1_2',
       desc: '',
       args: [],
     );
   }
 
   /// `Fácil y rápido`
-  String get flow2_1 {
+  String get textFlow2_1 {
     return Intl.message(
       'Fácil y rápido',
-      name: 'flow2_1',
+      name: 'textFlow2_1',
       desc: '',
       args: [],
     );
   }
 
   /// `Recarga los celulares de tu familia en 3 simples pasos.`
-  String get flow2_2 {
+  String get textFlow2_2 {
     return Intl.message(
       'Recarga los celulares de tu familia en 3 simples pasos.',
-      name: 'flow2_2',
+      name: 'textFlow2_2',
       desc: '',
       args: [],
     );
   }
 
   /// `Seguro y confiable`
-  String get flow3_1 {
+  String get textFlow3_1 {
     return Intl.message(
       'Seguro y confiable',
-      name: 'flow3_1',
+      name: 'textFlow3_1',
       desc: '',
       args: [],
     );
   }
 
   /// `Los pagos se realizan a través de un entorno protegido y seguro.`
-  String get flow3_2 {
+  String get textFlow3_2 {
     return Intl.message(
       'Los pagos se realizan a través de un entorno protegido y seguro.',
-      name: 'flow3_2',
+      name: 'textFlow3_2',
       desc: '',
       args: [],
     );
   }
 
   /// `¿A quién le vas a enviar la recarga?`
-  String get flow4_1 {
+  String get textFlow4_1 {
     return Intl.message(
       '¿A quién le vas a enviar la recarga?',
-      name: 'flow4_1',
+      name: 'textFlow4_1',
       desc: '',
       args: [],
     );
   }
 
-  /// `recargar celular`
-  String get btnCel {
+  /// `Introduce tu número de teléfono`
+  String get textPhone {
     return Intl.message(
-      'recargar celular',
-      name: 'btnCel',
+      'Introduce tu número de teléfono',
+      name: 'textPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Centro de ayuda`
+  String get textHelpTitle {
+    return Intl.message(
+      'Centro de ayuda',
+      name: 'textHelpTitle',
       desc: '',
       args: [],
     );
@@ -250,91 +330,11 @@ class Literals {
     );
   }
 
-  /// `Iniciar recarga`
-  String get btnTopUpC {
-    return Intl.message(
-      'Iniciar recarga',
-      name: 'btnTopUpC',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `País del celular`
-  String get country {
-    return Intl.message(
-      'País del celular',
-      name: 'country',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Buscar país`
-  String get search_country {
-    return Intl.message(
-      'Buscar país',
-      name: 'search_country',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Centro de ayuda`
-  String get helpTitle {
-    return Intl.message(
-      'Centro de ayuda',
-      name: 'helpTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Formulario de contacto`
-  String get formHelp {
-    return Intl.message(
-      'Formulario de contacto',
-      name: 'formHelp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Mas información`
-  String get plusHelp {
-    return Intl.message(
-      'Mas información',
-      name: 'plusHelp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Contáctanos`
-  String get contactUs {
-    return Intl.message(
-      'Contáctanos',
-      name: 'contactUs',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Por favor rellena el formulario.`
-  String get fromTitle {
+  String get formTitle {
     return Intl.message(
       'Por favor rellena el formulario.',
-      name: 'fromTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Nombre`
-  String get formName {
-    return Intl.message(
-      'Nombre',
-      name: 'formName',
+      name: 'formTitle',
       desc: '',
       args: [],
     );
@@ -410,11 +410,41 @@ class Literals {
     );
   }
 
+  /// `Enviar`
+  String get formSend {
+    return Intl.message(
+      'Enviar',
+      name: 'formSend',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Por favor, escribe tu mensaje`
   String get formMessageError {
     return Intl.message(
       'Por favor, escribe tu mensaje',
       name: 'formMessageError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Formulario de contacto`
+  String get formHelp {
+    return Intl.message(
+      'Formulario de contacto',
+      name: 'formHelp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nombre`
+  String get formName {
+    return Intl.message(
+      'Nombre',
+      name: 'formName',
       desc: '',
       args: [],
     );
@@ -430,11 +460,41 @@ class Literals {
     );
   }
 
-  /// `Enviar`
-  String get formSend {
+  /// `País del celular`
+  String get country {
     return Intl.message(
-      'Enviar',
-      name: 'formSend',
+      'País del celular',
+      name: 'country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buscar país`
+  String get search_country {
+    return Intl.message(
+      'Buscar país',
+      name: 'search_country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mas información`
+  String get plusHelp {
+    return Intl.message(
+      'Mas información',
+      name: 'plusHelp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contáctanos`
+  String get contactUs {
+    return Intl.message(
+      'Contáctanos',
+      name: 'contactUs',
       desc: '',
       args: [],
     );
@@ -560,56 +620,6 @@ class Literals {
     );
   }
 
-  /// `Inicio`
-  String get bottomBar1 {
-    return Intl.message(
-      'Inicio',
-      name: 'bottomBar1',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Recargas`
-  String get bottomBar2 {
-    return Intl.message(
-      'Recargas',
-      name: 'bottomBar2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Promos`
-  String get bottomBar3 {
-    return Intl.message(
-      'Promos',
-      name: 'bottomBar3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Perfil`
-  String get bottomBar4 {
-    return Intl.message(
-      'Perfil',
-      name: 'bottomBar4',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Recargas recientes`
-  String get recentRecharges {
-    return Intl.message(
-      'Recargas recientes',
-      name: 'recentRecharges',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Agregar nuevo`
   String get addNew {
     return Intl.message(
@@ -635,6 +645,16 @@ class Literals {
     return Intl.message(
       '¿Olvidaste tu código?',
       name: 'forgetCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recargas recientes`
+  String get recentRecharges {
+    return Intl.message(
+      'Recargas recientes',
+      name: 'recentRecharges',
       desc: '',
       args: [],
     );

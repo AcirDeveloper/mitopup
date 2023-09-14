@@ -2,21 +2,21 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../data/entities/help_entity.dart';
+import '../../../../domain/data.dart';
 
 class HelpCenterScreen extends StatelessWidget {
+  static const String name = 'center-help';
+
   const HelpCenterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _HelpCenterViewScreen();
+    return const _HelpCenterViewScreen();
   }
 }
 
 class _HelpCenterViewScreen extends ConsumerStatefulWidget {
-  const _HelpCenterViewScreen({
-    super.key,
-  });
+  const _HelpCenterViewScreen();
 
   @override
   _HelpCenterViewScreenState createState() => _HelpCenterViewScreenState();

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:mitopup/presentation/screens/profile/items/language_screen.dart';
 
 import '../../../../config/theme/buttons.dart';
 import '../../../../config/theme/images.dart';
 import '../../../../config/theme/others.dart';
+import '../../../../domain/data.dart';
 import '../../../../generated/l10n.dart';
+import '../../../widgets/buttons/language_button.dart';
 
 class AcceptNotificationsScreen extends StatelessWidget {
   const AcceptNotificationsScreen({super.key});
@@ -65,24 +66,27 @@ class _AcceptNotificationViewState extends State<_AcceptNotificationView> {
                               BorderSide(color: HexColor('#dbdbdb'), width: 2)),
                     ),
                     child: LanguageButton(
-                      flagAsset: AppImages.mexico,
-                      language: 'Español',
-                      languageCorto: 'MX',
-                      // Todo: implementar la logica para que cambie el idioma
-                      isSelected: true,
+                      customButton: CustomLanguageButton(
+                        flagAsset: AppImages.mexico,
+                        language: 'Español',
+                        languageShort: 'MX',
+                        isSelected: false,
+                        onTap: () {
+                          setState(() {});
+                        },
+                      ),
+                    ),
+                  ),
+                  LanguageButton(
+                    customButton: CustomLanguageButton(
+                      flagAsset: AppImages.usa,
+                      language: 'English',
+                      languageShort: 'US',
+                      isSelected: false,
                       onTap: () {
                         setState(() {});
                       },
                     ),
-                  ),
-                  LanguageButton(
-                    flagAsset: AppImages.usa,
-                    language: 'English',
-                    languageCorto: 'US',
-                    isSelected: false,
-                    onTap: () {
-                      setState(() {});
-                    },
                   ),
                 ],
               ),

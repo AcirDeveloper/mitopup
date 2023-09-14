@@ -1,14 +1,12 @@
 name: mitopup
+
 description: Recharge the cell phone of your loved ones quickly, safely and easily.
-publish_to: "none"
+publish_to: none
 
 version: 1.0.0+1
 
-# Environment
 environment:
-  sdk: ">=3.0.5 <4.0.0"
-
-# Dependencies
+  sdk: '>=3.0.5 <4.0.0'
 dependencies:
   flutter:
     sdk: flutter
@@ -30,15 +28,17 @@ dependencies:
   http: ^1.1.0
   flutter_dotenv: ^5.1.0
   dio: ^5.3.2
+  provider: ^6.0.5
   flutter_riverpod: ^2.4.0
+  formz: ^0.6.0
 
-# Dev dependencies
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.3
 
-# Assets
+
 flutter:
   uses-material-design: true
   assets:
@@ -48,7 +48,6 @@ flutter:
     - assets/langs/
     - .env
 
-# Internationalization
 flutter_intl:
   enabled: true
   main_locale: es

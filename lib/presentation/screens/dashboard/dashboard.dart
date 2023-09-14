@@ -10,6 +10,7 @@ import '../screens.dart';
 // Todo: Contactos
 
 class Dashboard extends StatefulWidget {
+  static const String name = 'dashboard-screen';
   final String userId;
 
   const Dashboard({super.key, required this.userId});
@@ -56,17 +57,17 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
-        children: [
-          const Center(
+        children: const [
+          Center(
             child: Placeholder(),
           ),
           Center(
-            child: RecargasDash(userId: widget.userId),
+            child: RechargesScreen(),
           ),
-          const Center(
-            child: PromosPage(),
+          Center(
+            child: PromosScreen(),
           ),
-          const Center(
+          Center(
             child: ProfileScreen(),
           ),
         ],

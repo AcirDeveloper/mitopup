@@ -30,9 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "bottomBar2": MessageLookupByLibrary.simpleMessage("Recargas"),
         "bottomBar3": MessageLookupByLibrary.simpleMessage("Promos"),
         "bottomBar4": MessageLookupByLibrary.simpleMessage("Perfil"),
+        "btnBegin": MessageLookupByLibrary.simpleMessage("Comenzar recarga"),
         "btnCel": MessageLookupByLibrary.simpleMessage("recargar celular"),
         "btnGetInto": MessageLookupByLibrary.simpleMessage("Ingresar"),
+        "btnHelp": MessageLookupByLibrary.simpleMessage("Ayuda"),
         "btnJump": MessageLookupByLibrary.simpleMessage("Saltar"),
+        "btnLanguage": MessageLookupByLibrary.simpleMessage("Idioma"),
         "btnLogin": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
         "btnNext": MessageLookupByLibrary.simpleMessage("Siguiente"),
         "btnRegister": MessageLookupByLibrary.simpleMessage("Registrarse"),
@@ -42,18 +45,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "contactUs": MessageLookupByLibrary.simpleMessage("Contáctanos"),
         "contacts": MessageLookupByLibrary.simpleMessage("Contactos"),
         "country": MessageLookupByLibrary.simpleMessage("País del celular"),
-        "flow1_1":
-            MessageLookupByLibrary.simpleMessage("Servicio internacional"),
-        "flow1_2": MessageLookupByLibrary.simpleMessage(
-            "Envía recargas al celular de cualquier país estés donde estés."),
-        "flow2_1": MessageLookupByLibrary.simpleMessage("Fácil y rápido"),
-        "flow2_2": MessageLookupByLibrary.simpleMessage(
-            "Recarga los celulares de tu familia en 3 simples pasos."),
-        "flow3_1": MessageLookupByLibrary.simpleMessage("Seguro y confiable"),
-        "flow3_2": MessageLookupByLibrary.simpleMessage(
-            "Los pagos se realizan a través de un entorno protegido y seguro."),
-        "flow4_1": MessageLookupByLibrary.simpleMessage(
-            "¿A quién le vas a enviar la recarga?"),
         "forgetCode":
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu código?"),
         "formAttach": MessageLookupByLibrary.simpleMessage("Adjuntar archivo"),
@@ -75,15 +66,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "formNamePlaceholder":
             MessageLookupByLibrary.simpleMessage("Escribe tu nombre"),
         "formSend": MessageLookupByLibrary.simpleMessage("Enviar"),
-        "form_num": MessageLookupByLibrary.simpleMessage("Introduce el número"),
-        "fromTitle": MessageLookupByLibrary.simpleMessage(
+        "formTitle": MessageLookupByLibrary.simpleMessage(
             "Por favor rellena el formulario."),
+        "form_num": MessageLookupByLibrary.simpleMessage("Introduce el número"),
         "hello": m0,
-        "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
-        "helpTitle": MessageLookupByLibrary.simpleMessage("Centro de ayuda"),
         "homeMainText": MessageLookupByLibrary.simpleMessage(
             "Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla."),
-        "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "loginHint":
             MessageLookupByLibrary.simpleMessage("Tú número de teléfono"),
         "loginPlaceholder": MessageLookupByLibrary.simpleMessage(
@@ -103,6 +91,23 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nos pondremos en contacto con usted por correo electrónico lo antes posible."),
         "successTitle":
             MessageLookupByLibrary.simpleMessage("Formulario enviado"),
+        "textFlow1_1":
+            MessageLookupByLibrary.simpleMessage("Servicio internacional"),
+        "textFlow1_2": MessageLookupByLibrary.simpleMessage(
+            "Envía recargas al celular de cualquier país estés donde estés."),
+        "textFlow2_1": MessageLookupByLibrary.simpleMessage("Fácil y rápido"),
+        "textFlow2_2": MessageLookupByLibrary.simpleMessage(
+            "Recarga los celulares de tu familia en 3 simples pasos."),
+        "textFlow3_1":
+            MessageLookupByLibrary.simpleMessage("Seguro y confiable"),
+        "textFlow3_2": MessageLookupByLibrary.simpleMessage(
+            "Los pagos se realizan a través de un entorno protegido y seguro."),
+        "textFlow4_1": MessageLookupByLibrary.simpleMessage(
+            "¿A quién le vas a enviar la recarga?"),
+        "textHelpTitle":
+            MessageLookupByLibrary.simpleMessage("Centro de ayuda"),
+        "textPhone": MessageLookupByLibrary.simpleMessage(
+            "Introduce tu número de teléfono"),
         "titlePass":
             MessageLookupByLibrary.simpleMessage("recupera tu contraseña"),
         "verTodo": MessageLookupByLibrary.simpleMessage("Ver todo")

@@ -4,18 +4,18 @@ import 'package:mitopup/generated/l10n.dart';
 
 import '../../../config/config.dart';
 
-class Notificaciones extends StatefulWidget {
-  const Notificaciones({super.key});
+class NotificationsScreen extends StatefulWidget {
+  const NotificationsScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _NotificacionesState createState() => _NotificacionesState();
+  _NotificationsScreenState createState() => _NotificationsScreenState();
 }
 
-class _NotificacionesState extends State<Notificaciones> {
+class _NotificationsScreenState extends State<NotificationsScreen> {
   String? previousMonthYear;
 
-  // List<NotificationsEntity> notificaciones = [
+  // List<NotificationsEntity> NotificationsScreen = [
   //   NotificationsEntity(
   //     message: "23/03/2023 14:05",
   //     title: "Tarjeta caducada",
@@ -51,7 +51,7 @@ class _NotificacionesState extends State<Notificaciones> {
   //     title: "Recarga automática realizada",
   //     message: "Recarga mensual de Plan amigo  a Mamá",
   //   ),
-  //   // Agrega más notificaciones aquí...
+  //   // Agrega más NotificationsScreen aquí...
   // ];
 
   @override
@@ -69,7 +69,7 @@ class _NotificacionesState extends State<Notificaciones> {
         // child: ListView.separated(
         //   itemCount: ,
         //   itemBuilder: (context, index) {
-        //     NotificationsEntity notificacion = notificaciones[index];
+        //     NotificationsEntity notificacion = NotificationsScreen[index];
         //
         //     // Verificar si el mes y año actual es diferente al mes y año anterior
         //     bool showSeparator =

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mitopup/config/config.dart';
 import 'package:mitopup/generated/l10n.dart';
 
-import 'config/router/app_router.dart';
-
 Future<void> main() async {
-  await dotenv.load(fileName: '.env');
+  await Environment.initEnvironment();
   runApp(const ProviderScope(child: Home()));
 }
 
@@ -31,7 +29,10 @@ class Home extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         Literals.delegate,
       ],
-      supportedLocales: Literals.delegate.supportedLocales,
+      supportedLocales: const [
+        Locale('en', 'US'), // English (EE. UU.)
+        Locale('es', 'MX'), // Spanish (Mexico)
+      ],
     );
   }
 }

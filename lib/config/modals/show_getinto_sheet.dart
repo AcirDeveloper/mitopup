@@ -15,8 +15,8 @@ void showGetInto(
     context: context,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(40.0),
-        topRight: Radius.circular(40.0),
+        topLeft: Radius.circular(20.0),
+        topRight: Radius.circular(20.0),
       ),
     ),
     isScrollControlled: true,
@@ -26,25 +26,11 @@ void showGetInto(
           return SlideTransition(
             position: slideAnimation,
             child: FractionallySizedBox(
-              heightFactor: 0.7,
+              heightFactor: 0.6,
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: const LoginScreen(),
-                // child: LoginPage(
-                //   userId: 123,
-                //   name: 'John',
-                //   onStep3Complete: () {
-                //     Navigator.pop(context);
-                //     // Abrimos el nuevo BottomSheet (RecargasPage)
-                //     showRechargesBottomSheet(
-                //         context,
-                //         updateStateCallback,
-                //         updateBottomSheetContextIndex,
-                //         slideAnimation,
-                //         animationController);
-                //   },
-                // ),
               ),
             ),
           );

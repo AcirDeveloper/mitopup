@@ -1,8 +1,8 @@
-import 'package:mitopup/config/constants/environment.dart';
-import 'package:mitopup/data/entities/help_entity.dart';
 import 'package:dio/dio.dart';
 
-import '../model/help_model.dart';
+import '../../config/config.dart';
+import '../../domain/data.dart';
+import '../infrastructure.dart';
 
 class HelpDBDatasource {
   final dio = Dio(BaseOptions(

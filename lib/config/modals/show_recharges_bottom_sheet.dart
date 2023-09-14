@@ -14,8 +14,8 @@ void showRechargesBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(30.0),
-        topRight: Radius.circular(30.0),
+        topLeft: Radius.circular(20.0),
+        topRight: Radius.circular(20.0),
       ),
     ),
     isScrollControlled: true,
@@ -24,8 +24,7 @@ void showRechargesBottomSheet(
         position: slideAnimation,
         child: const FractionallySizedBox(
           heightFactor: 0.6,
-          // Ajusta la altura como desees (0.8 significa que ocupa el 80% de la altura disponible)
-          child: RechargesScreen(), //RecargasPage(),
+          child: RechargesScreen(),
         ),
       );
     },

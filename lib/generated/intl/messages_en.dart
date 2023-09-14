@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bottomBar2": MessageLookupByLibrary.simpleMessage("refills"),
         "bottomBar3": MessageLookupByLibrary.simpleMessage("Promos"),
         "bottomBar4": MessageLookupByLibrary.simpleMessage("Profile"),
+        "btnBegin": MessageLookupByLibrary.simpleMessage("Begin reload"),
         "btnCel": MessageLookupByLibrary.simpleMessage("Recharge cell phone"),
         "btnGetInto": MessageLookupByLibrary.simpleMessage("Get into"),
         "btnJump": MessageLookupByLibrary.simpleMessage("Jump"),
@@ -43,18 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "contacts": MessageLookupByLibrary.simpleMessage("My contacts"),
         "country":
             MessageLookupByLibrary.simpleMessage("Country of the cell phone"),
-        "flow1_1":
-            MessageLookupByLibrary.simpleMessage("International service"),
-        "flow1_2": MessageLookupByLibrary.simpleMessage(
-            "Send recharges to the cell phone of any country wherever you are."),
-        "flow2_1": MessageLookupByLibrary.simpleMessage("Easy and fast"),
-        "flow2_2": MessageLookupByLibrary.simpleMessage(
-            "Recharge your family\'s cell phones in 3 simple steps."),
-        "flow3_1": MessageLookupByLibrary.simpleMessage("Secure and reliable"),
-        "flow3_2": MessageLookupByLibrary.simpleMessage(
-            "Payments are made through a protected and secure environment."),
-        "flow4_1": MessageLookupByLibrary.simpleMessage(
-            "Who are you going to send the recharge to?"),
         "forgetCode": MessageLookupByLibrary.simpleMessage("Forgot your code?"),
         "formAttach": MessageLookupByLibrary.simpleMessage("Attach files"),
         "formEmail": MessageLookupByLibrary.simpleMessage("Email"),
@@ -75,14 +64,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your name"),
         "formSend": MessageLookupByLibrary.simpleMessage("Send message"),
         "form_num": MessageLookupByLibrary.simpleMessage("Enter the number"),
-        "fromTitle":
-            MessageLookupByLibrary.simpleMessage("Please fill out the form."),
         "hello": m0,
-        "help": MessageLookupByLibrary.simpleMessage("Help"),
-        "helpTitle": MessageLookupByLibrary.simpleMessage("Help Center"),
         "homeMainText": MessageLookupByLibrary.simpleMessage(
             "Recharge your loved ones\' phones quickly, safely and easily."),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "loginHint": MessageLookupByLibrary.simpleMessage("Your mobile number"),
         "loginPlaceholder":
             MessageLookupByLibrary.simpleMessage("Mobile number"),

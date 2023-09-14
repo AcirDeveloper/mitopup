@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PromosPage extends StatelessWidget {
-  const PromosPage({super.key});
+class PromosScreen extends StatelessWidget {
+  const PromosScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

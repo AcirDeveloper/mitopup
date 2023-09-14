@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mitopup/generated/l10n.dart';
 
 import '../../presentation/screens/profile/items/language_screen.dart';
 
@@ -8,8 +9,6 @@ void showLanguageBottomSheet(
   Function updateBottomSheetContextIndex,
   Animation<Offset> slideAnimation,
   AnimationController animationController,
-  String selectedLanguage,
-  Function(String) changeLanguage,
 ) {
   showModalBottomSheet(
     context: context,
@@ -26,16 +25,11 @@ void showLanguageBottomSheet(
         child: FractionallySizedBox(
           heightFactor: 0.4,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Card(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: const Card(
               elevation: 0,
               clipBehavior: Clip.antiAlias,
-              child: LanguageSelectorBottomSheet(
-                // Utilizamos la variable del widget para obtener el idioma seleccionado
-                selectedLanguage: selectedLanguage,
-                // Utilizamos la variable del widget para cambiar el idioma
-                changeLanguage: changeLanguage,
-              ),
+              child: LanguageSelectorBottomSheet(),
             ),
           ),
         ),

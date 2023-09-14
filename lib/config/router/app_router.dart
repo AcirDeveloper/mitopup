@@ -1,13 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:mitopup/presentation/screens/home/initial_screen.dart';
-import 'package:mitopup/presentation/screens/profile/items/accept_notifications_screen.dart';
 import 'package:mitopup/presentation/screens/screens.dart';
-
-import '../../presentation/screens/profile/items/help_center_screen.dart';
-import '../../presentation/screens/profile/items/invite_friends_screen.dart';
-import '../../presentation/screens/profile/items/language_screen.dart';
-import '../../presentation/screens/profile/items/payment_methods_screen.dart';
-import '../../presentation/widgets/tests/example_form.dart';
+import 'package:mitopup/presentation/widgets/widgets.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -18,18 +11,31 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/notifications',
-      builder: (context, state) => const Notificaciones(),
+      path: '/login',
+      name: LoginScreen.name,
+      builder: (context, state) => const LoginScreen(),
     ),
 
     GoRoute(
-      path: '/help',
-      builder: (context, state) => const CentroAyudaPage(),
+      path: '/login/pin',
+      name: PinScreen.name,
+      builder: (context, state) => const PinScreen(),
+    ),
+
+    GoRoute(
+      path: '/dashboard',
+      name: Dashboard.name,
+      builder: (context, state) => const Dashboard(userId: '1'),
+    ),
+
+    GoRoute(
+      path: '/notifications',
+      builder: (context, state) => const NotificationsScreen(),
     ),
 
     GoRoute(
       path: '/help/form',
-      builder: (context, state) => const AyudaForm(),
+      builder: (context, state) => const HelpFormScreen(),
     ),
 
     // Rutas de perfil
@@ -55,6 +61,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/profile/help_center',
+      name: HelpCenterScreen.name,
       builder: (context, state) => const HelpCenterScreen(),
     ),
     GoRoute(
@@ -63,10 +70,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/profile/language',
-      builder: (context, state) => LanguageSelectorBottomSheet(
-        selectedLanguage: 'ES',
-        changeLanguage: (String p1) {},
-      ),
+      builder: (context, state) => const LanguageSelectorBottomSheet(),
     ),
 
     // Rutas de recargas

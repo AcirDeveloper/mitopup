@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:mitopup/config/config.dart';
+import 'package:mitopup/presentation/screens/auth/login_screen.dart';
 import 'package:mitopup/presentation/screens/dashboard/dashboard.dart';
 
 import '../../../config/theme/buttons.dart';
@@ -37,7 +39,7 @@ class _RechargesScreenState extends State<RechargesScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            Literals.of(context).flow4_1,
+                            Literals.of(context).textFlow4_1,
                             style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w400,
@@ -148,22 +150,12 @@ class _RechargesScreenState extends State<RechargesScreen> {
                           const SizedBox(height: 25.0),
                           SizedBox(
                             width: double.infinity,
-                            child: DynamicButton(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Dashboard(
-                                      userId: '43',
-                                    ),
-                                  ),
-                                );
+                            child: OutlineButton(
+                              onPressed: () {
+                                GoRouter.of(context).pushNamed(Dashboard.name);
                               },
-                              // isPhoneNumberFilled ? _navigateToLogin : null,
-                              isFilled: true,
-                              // isPhoneNumberFilled,
                               buttonText:
-                                  capitalize(Literals.of(context).btnGetInto),
+                                  capitalize(Literals.of(context).btnBegin),
                             ),
                           ),
                           const SizedBox(height: 10.0),
@@ -208,31 +200,24 @@ class _RechargesScreenState extends State<RechargesScreen> {
                           const SizedBox(height: 10.0),
                           SizedBox(
                             width: double.infinity,
-                            child: OutlineButton(
-                              onPressed: () {},
-                              buttonText: Literals.of(context).btnRegister,
+                            child: BlueButton(
+                              onPressed: () {
+                                GoRouter.of(context)
+                                    .pushNamed(LoginScreen.name);
+                              },
+                              buttonText:
+                                  capitalize(Literals.of(context).btnRegister),
                             ),
                           ),
                           const SizedBox(height: 16.0),
                           SizedBox(
                             width: double.infinity,
                             height: 50.0,
-                            child: TextButton(
+                            child: WhiteButton(
                               onPressed: () {
-                                // Lógica del botón "Hacer recarga"
+                                GoRouter.of(context).push(LoginScreen.name);
                               },
-                              style: TextButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                              ),
-                              child: Text(
-                                Literals.of(context).btnTopUp,
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  color: HexColor("#0743DF"),
-                                ),
-                              ),
+                              buttonText: Literals.of(context).btnGetInto,
                             ),
                           ),
                         ],

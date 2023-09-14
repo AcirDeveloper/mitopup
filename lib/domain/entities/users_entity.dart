@@ -25,3 +25,17 @@ class UsersEntity {
     required this.idLanguage,
   });
 }
+
+class LoginEntity {
+  final String codeCountry;
+  final String phone;
+  final int pinAccess;
+  final String token;
+
+  LoginEntity({
+    required this.codeCountry,
+    required this.phone,
+    required this.pinAccess,
+    required this.token,
+  });
+}

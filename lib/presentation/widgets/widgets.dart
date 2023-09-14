@@ -1,2 +1,10 @@
-export 'package:mitopup/presentation/screens/profile/items/language_screen.dart';
-export 'package:mitopup/presentation/screens/home/steps.dart';
+export 'buttons/language_button.dart';
+export 'home/build_app_bar_actions.dart';
+export 'home/build_home_content.dart';
+export 'home/initial_slide_widget.dart';
+export 'recovery/recovery_pass_widget.dart';
+export 'shared/pins.dart';
+export 'tests/example_form.dart';
+export 'inputs/phone_widget.dart';
+export 'inputs/email_widget.dart';
+export 'inputs/code_country_widget.dart';

@@ -57,5 +57,6 @@
   "recentRecharges": "Recent Recharges",
   "addNew": "Add New",
   "notifications": "Notifications",
-  "forgetCode": "Forgot your code?"
+  "forgetCode": "Forgot your code?",
+  "btnBegin": "Begin reload"
 }
