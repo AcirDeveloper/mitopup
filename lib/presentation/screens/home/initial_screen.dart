@@ -19,7 +19,7 @@ class _InitialScreenState extends State<InitialScreen>
   late Animation<Offset> logoOffset;
   bool isBottomSheetOpen = false;
   int bottomSheetContextIndex = 0;
-  String _selectedLanguage = 'English (US)';
+  final String selectedLanguage = 'English (US)';
 
   void updateBottomSheetState() {
     setState(() {
@@ -36,7 +36,7 @@ class _InitialScreenState extends State<InitialScreen>
   void saveLanguageAndPop(BuildContext context) {
     // final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
     // languageProvider.changeLanguage(_selectedLanguage);
-    Navigator.pop(context, _selectedLanguage);
+    Navigator.pop(context, selectedLanguage);
   }
 
   @override
@@ -44,7 +44,7 @@ class _InitialScreenState extends State<InitialScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 2000),
     );
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0),
@@ -80,26 +80,25 @@ class _InitialScreenState extends State<InitialScreen>
                 GestureDetector(
                   onTap: () {
                     showLanguageBottomSheet(
-                      context,
-                      updateBottomSheetState,
-                      updateBottomSheetContextIndex,
-                      _slideAnimation,
-                      _animationController,
-                    );
+                        context,
+                        updateBottomSheetState,
+                        updateBottomSheetContextIndex,
+                        _slideAnimation,
+                        _animationController,
+                        selectedLanguage);
                   },
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.language,
                         color: Colors.white,
                       ),
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Text(
-                        'Mexico (MX)',
-                        // widget.selectedLanguage ?? 'Mexico (MX)',
-                        style: TextStyle(color: Colors.white),
+                        selectedLanguage ?? 'Mexico (MX)',
+                        style: const TextStyle(color: Colors.white),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_drop_down,
                         color: Colors.white,
                       ),

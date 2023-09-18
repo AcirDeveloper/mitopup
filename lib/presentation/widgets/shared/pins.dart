@@ -1,119 +1,248 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:mitopup/config/config.dart';
 
-class PinScreen extends StatelessWidget {
+import '../../../generated/l10n.dart';
+import '../../screens/screens.dart';
+
+class PinScreen extends StatefulWidget {
   static const String name = 'pins-screen';
 
-  const PinScreen({super.key});
+  const PinScreen(
+      {super.key, required String phoneNumber, required String idPais});
+
+  @override
+  State<PinScreen> createState() => _PinScreenState();
+}
+
+class _PinScreenState extends State<PinScreen> {
+  List<int?> pinNumbers = [];
+  final bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initPinNumbers();
+  }
+
+  void initPinNumbers() {
+    setState(() {
+      pinNumbers = List<int?>.filled(4, null);
+    });
+  }
+
+  void addPinNumber(int number) {
+    final emptyIndex = pinNumbers.indexWhere((element) => element == null);
+    if (emptyIndex != -1) {
+      setState(() {
+        pinNumbers[emptyIndex] = number;
+      });
+      if (emptyIndex == 3) {
+        // When the last number is entered
+        final pin = pinNumbers.map((number) => number.toString()).join();
+        // loginApp(pin, widget.userId);
+      }
+    }
+  }
+
+  void removeLastPinNumber() {
+    final filledIndex = pinNumbers.lastIndexWhere((element) => element != null);
+    if (filledIndex != -1) {
+      setState(() {
+        pinNumbers[filledIndex] = null;
+      });
+      print('Pin numbers after removing: $pinNumbers');
+    }
+  }
+
+  void clearPinNumbers() {
+    setState(() {
+      pinNumbers = List<int?>.filled(4, null);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Row(
-          children: [
-            Image.asset(AppImages.iconLogo, width: 40),
-            const SizedBox(width: 8),
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              // Lógica para cerrar sesión
-            },
-            icon: const Icon(
-              Icons.logout_outlined,
-              color: Colors.black,
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 20),
-            height: 1,
-            color: Colors.grey,
-          ),
-        ],
+      appBar: LoginAppBar(
+        title: 'Cerrar Sesión',
+        actionIcon: Icons.logout,
+        actionOnPressed: () {
+          // Lógica para el botón de cierre de sesión
+        },
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // 1. Nombre de la Persona en la Parte Superior
-            const Text(
-              '¡Nombre de la Persona!',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Introduce tu PIN para acceder',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            //hr poner un hr en flutter
-            const SizedBox(height: 20),
-
-            // 2. Círculos para el PIN
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.fromLTRB(16.0, 43.0, 16.0, 16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleIndicator(isFilled: false),
-                CircleIndicator(isFilled: false),
-                CircleIndicator(isFilled: false),
-                CircleIndicator(isFilled: false),
+                Text(
+                  Literals.of(context).hello('Maria'),
+                  style: const TextStyle(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                    height: 19 / 38,
+                  ),
+                ),
+                const SizedBox(height: 15.0),
+                Text(
+                  'Introduce tu PIN para acceder',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: HexColor("#34405F"),
+                    height: 24 / 16,
+                  ),
+                ),
+                const SizedBox(height: 25.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: pinNumbers
+                      .map(
+                        (number) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: CircleAvatar(
+                            radius: 12.0,
+                            backgroundColor: (number != null)
+                                ? const Color(0xFF005CEE)
+                                : const Color(0xFFECECEC),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
+                const SizedBox(height: 16.0),
+                SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 16.0),
+                      Container(
+                        color: Colors.white,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            KeypadRow(
+                                numbers: const [1, 2, 3],
+                                onPressed: addPinNumber),
+                            KeypadRow(
+                                numbers: const [4, 5, 6],
+                                onPressed: addPinNumber),
+                            KeypadRow(
+                                numbers: const [7, 8, 9],
+                                onPressed: addPinNumber),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const SizedBox(width: 53.0),
+                                KeypadButton(
+                                  number: 0,
+                                  onPressed: addPinNumber,
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.arrow_back,
+                                      size: 30.0, color: HexColor("#005CEE")),
+                                  onPressed: () {
+                                    print(
+                                        'Pin numbers before removing: $pinNumbers');
+                                    removeLastPinNumber();
+                                    print(
+                                        'Pin numbers after removing: $pinNumbers');
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16.0),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    '¿Has olvidado tu código?',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
               ],
             ),
-            const SizedBox(height: 20),
-
-            // 3. Teclado Numérico
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+          ),
+          if (_isLoading)
+            Positioned.fill(
+              child: Container(
+                color: Colors.black.withOpacity(0.6),
+                child: const Center(
+                  child:
+                      Loader(), // Usamos el Loader que creamos en "theme.dart"
                 ),
-                itemCount: 12, // 12 para incluir el botón "<-"
-                itemBuilder: (context, index) {
-                  if (index == 9) {
-                    return TextButton(
-                      onPressed: () {
-                        // Lógica para borrar un dígito
-                      },
-                      // nulo o desabilidado
-                      child: const Text(''),
-                    );
-                  } else if (index == 11) {
-                    return const Icon(
-                      Icons.arrow_back_sharp,
-                      color: Colors.blue,
-                    );
-                  } else if (index == 10) {
-                    return const NumButton(number: '0');
-                  } else {
-                    return NumButton(number: '${index + 1}');
-                  }
-                },
               ),
             ),
+        ],
+      ),
+    );
+  }
+}
 
-            // 4. Botón "¿Has Olvidado tu PIN?"
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Lógica para manejar "¿Has Olvidado tu PIN?"
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.transparent, // Color de fondo gris
-                elevation: 0,
-              ),
-              // subrayado gris
-              child: const Text('¿Has Olvidado tu PIN?',
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline)),
+class KeypadRow extends StatelessWidget {
+  final List<int> numbers;
+  final void Function(int) onPressed;
+
+  const KeypadRow({
+    Key? key,
+    required this.numbers,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: numbers
+          .map(
+            (number) => KeypadButton(
+              number: number,
+              onPressed: onPressed,
             ),
-          ],
+          )
+          .toList(),
+    );
+  }
+}
+
+class KeypadButton extends StatelessWidget {
+  final int number;
+  final void Function(int) onPressed;
+
+  const KeypadButton({
+    Key? key,
+    required this.number,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80.0,
+      height: 80.0,
+      child: TextButton(
+        onPressed: () => onPressed(number),
+        child: Text(
+          number.toString(),
+          style: TextStyle(
+            fontSize: 30.0,
+            color: HexColor("#005CEE"),
+          ),
         ),
       ),
     );
@@ -149,6 +278,7 @@ class NumButton extends StatelessWidget {
   const NumButton({
     super.key,
     required this.number,
+    required Null Function() onPressed,
   });
 
   @override

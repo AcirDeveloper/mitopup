@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../domain/data.dart';
+import '../../../../data/data.dart';
 
 class HelpCenterScreen extends StatelessWidget {
   static const String name = 'center-help';
@@ -33,26 +32,12 @@ class _HelpCenterViewScreenState extends ConsumerState<_HelpCenterViewScreen> {
   }
 
   Future<void> getHelps() async {
-    final response =
-        await Dio().get('http://5.78.79.129:8080/app.getFaqs?idioma=es');
-    final List<dynamic> helpList = response.data;
+    final getListsHelps = await HelpServices.getListHelps();
+    isExpandedList = List.generate(getListsHelps.length, (index) => false);
 
-    if (helpList.isNotEmpty) {
-      // Mapea la lista de respuestas JSON a objetos HelpEntity
-      final List<HelpEntity> helpEntitiesList = helpList.map((helpJson) {
-        return HelpEntity(
-          titleHelp: helpJson['pregunta'],
-          descriptionHelp: helpJson['respuesta'],
-        );
-      }).toList();
-
-      // Inicializa la lista de estados como falsos
-      isExpandedList = List.generate(helpEntitiesList.length, (index) => false);
-
-      setState(() {
-        helpEntities = helpEntitiesList;
-      });
-    }
+    setState(() {
+      helpEntities = getListsHelps;
+    });
   }
 
   void toggleExpansion(int index) {

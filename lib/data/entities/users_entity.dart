@@ -10,6 +10,7 @@ class UsersEntity {
   final bool allowCommunications;
   final bool acceptTermsAndConditions;
   final int idLanguage;
+  final int idPais;
 
   UsersEntity({
     required this.idUser,
@@ -23,6 +24,7 @@ class UsersEntity {
     required this.allowCommunications,
     required this.acceptTermsAndConditions,
     required this.idLanguage,
+    required this.idPais,
   });
 }
 

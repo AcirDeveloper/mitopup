@@ -3,8 +3,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:mitopup/generated/l10n.dart';
 
 import '../../../../config/config.dart';
-import '../../../../domain/data.dart';
-import '../../../widgets/buttons/language_button.dart';
+import '../../../../data/data.dart';
+import '../../../widgets/widgets.dart';
 
 class LanguageSelectorBottomSheet extends StatefulWidget {
   const LanguageSelectorBottomSheet({super.key});

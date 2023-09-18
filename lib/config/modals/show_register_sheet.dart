@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mitopup/generated/l10n.dart';
 
-import '../../presentation/screens/profile/items/language_screen.dart';
+import '../../presentation/screens/screens.dart';
 
-void showLanguageBottomSheet(
+void showRegisterModal(
   BuildContext context,
   Function updateStateCallback,
   Function updateBottomSheetContextIndex,
   Animation<Offset> slideAnimation,
   AnimationController animationController,
-  String selectedLanguage,
 ) {
+  updateBottomSheetContextIndex(4);
+  animationController.forward();
+
   showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
@@ -21,19 +22,20 @@ void showLanguageBottomSheet(
     ),
     isScrollControlled: true,
     builder: (BuildContext context) {
-      return SlideTransition(
-        position: slideAnimation,
-        child: FractionallySizedBox(
-          heightFactor: 0.4,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            child: const Card(
-              elevation: 0,
-              clipBehavior: Clip.antiAlias,
-              child: LanguageSelectorBottomSheet(),
+      return StatefulBuilder(
+        builder: (BuildContext context, StateSetter setState) {
+          return SlideTransition(
+            position: slideAnimation,
+            child: FractionallySizedBox(
+              heightFactor: 0.6,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: const RegisterScreen(),
+              ),
             ),
-          ),
-        ),
+          );
+        },
       );
     },
   ).then((value) {

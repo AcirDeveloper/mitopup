@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../config/theme/buttons.dart';
 import '../../../config/theme/images.dart';
 import '../../../config/theme/others.dart';
+import '../../../generated/l10n.dart';
 
 Widget buildHomeContent(
     BuildContext context,
@@ -57,22 +58,21 @@ Widget buildHomeContent(
             ),
             const SizedBox(height: 50),
             WhiteButton(
-                onPressed: () {
-                  _animationController.forward();
-                  _showOnboardingBottomSheet();
-                },
-                buttonText:
-                    'Comenzar' //capitalize(Literals.of(context).btnStart),
-                ),
+              onPressed: () {
+                _animationController.forward();
+                _showOnboardingBottomSheet();
+              },
+              buttonText: capitalize(Literals.of(context).btnStart),
+            ),
             const SizedBox(height: 16),
             BlueButton(
-                onPressed: () {
-                  _animationController.forward();
-                  _showIngresar();
-                },
-                buttonText:
-                    'Ingresar' //capitalize(Literals.of(context).btnNext),
-                ),
+              isFilled: true,
+              onPressed: () {
+                _animationController.forward();
+                _showIngresar();
+              },
+              buttonText: capitalize(Literals.of(context).btnNext),
+            ),
           ],
         ),
       ),

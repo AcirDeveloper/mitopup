@@ -61,6 +61,7 @@ class BlueButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.buttonText,
+    required bool isFilled,
   }) : super(key: key);
 
   @override

@@ -4,14 +4,14 @@ class CountryEntity {
   final int idCountry;
   final String countryCode;
   final String countryName;
-  final String code;
-  final int flag;
+  final int digits;
+  late final String flag;
 
   CountryEntity({
     required this.idCountry,
     required this.countryCode,
     required this.countryName,
-    required this.code,
+    required this.digits,
     required this.flag,
   });
 }

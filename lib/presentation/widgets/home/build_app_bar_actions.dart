@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mitopup/presentation/screens/profile/items/language_screen.dart';
 
+import '../../../config/theme/others.dart';
+import '../../../generated/l10n.dart';
 import '../../screens/profile/items/help_center_screen.dart';
 
 List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
@@ -49,16 +51,16 @@ List<Widget> buildAppBarActions(BuildContext context, String selectedLanguage) {
                     builder: (context) => const HelpCenterScreen()),
               );
             },
-            child: const Row(
+            child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.help,
                   color: Colors.white,
                 ),
-                SizedBox(width: 4),
+                const SizedBox(width: 4),
                 Text(
-                  'Comenzar', // capitalize(Literals.of(context).btnStart),
-                  style: TextStyle(color: Colors.white),
+                  capitalize(Literals.of(context).btnStart),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),

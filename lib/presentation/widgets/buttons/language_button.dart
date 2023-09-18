@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import '../../../domain/data.dart';
+import '../../../data/data.dart';
 
 class LanguageButton extends StatelessWidget {
   final CustomLanguageButton customButton;

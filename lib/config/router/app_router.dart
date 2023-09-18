@@ -17,9 +17,12 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/login/pin',
+      path: '/login/pin/:phoneNumber/:idPais',
       name: PinScreen.name,
-      builder: (context, state) => const PinScreen(),
+      builder: (context, state) => PinScreen(
+        phoneNumber: state.pathParameters['phoneNumber']!,
+        idPais: state.pathParameters['idPais']!,
+      ),
     ),
 
     GoRoute(

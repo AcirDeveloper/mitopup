@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import '../../../../config/theme/buttons.dart';
-import '../../../../config/theme/images.dart';
-import '../../../../config/theme/others.dart';
-import '../../../../domain/data.dart';
+import '../../../../config/config.dart';
+import '../../../../data/data.dart';
 import '../../../../generated/l10n.dart';
-import '../../../widgets/buttons/language_button.dart';
+import '../../../widgets/widgets.dart';
 
 class AcceptNotificationsScreen extends StatelessWidget {
   const AcceptNotificationsScreen({super.key});
@@ -96,6 +94,7 @@ class _AcceptNotificationViewState extends State<_AcceptNotificationView> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 15.0, 16.0, 30.0),
           child: BlueButton(
+            isFilled: true,
             onPressed: () {
               saveLanguageAndPop();
             },

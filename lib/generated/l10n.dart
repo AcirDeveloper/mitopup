@@ -320,6 +320,36 @@ class Literals {
     );
   }
 
+  /// `Registrate para hacer recargas más rápido`
+  String get textRegisterTitle {
+    return Intl.message(
+      'Registrate para hacer recargas más rápido',
+      name: 'textRegisterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selecciona el país del celular`
+  String get textCountryPhone {
+    return Intl.message(
+      'Selecciona el país del celular',
+      name: 'textCountryPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Celular de la recarga`
+  String get textPhoneRecharge {
+    return Intl.message(
+      'Celular de la recarga',
+      name: 'textPhoneRecharge',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Introduce el número`
   String get form_num {
     return Intl.message(
@@ -550,10 +580,10 @@ class Literals {
     );
   }
 
-  /// `Tú número de teléfono`
+  /// `Tú número de celular`
   String get loginHint {
     return Intl.message(
-      'Tú número de teléfono',
+      'Tú número de celular',
       name: 'loginHint',
       desc: '',
       args: [],

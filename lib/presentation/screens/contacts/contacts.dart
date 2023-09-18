@@ -5,13 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
-
-import 'package:mitopup/config/theme/theme.dart';
-
-import '../../../domain/data.dart';
-// Importa la librería 'dart:math' para usar la clase 'Random'
-
-// Todo: contactos.- idContacto, nombreContacto, telefono
+import '../../../config/config.dart';
+import '../../../data/data.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});

@@ -73,7 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeMainText": MessageLookupByLibrary.simpleMessage(
             "Recarga los teléfonos de tus seres queridos de forma rápida, segura y sencilla."),
         "loginHint":
-            MessageLookupByLibrary.simpleMessage("Tú número de teléfono"),
+            MessageLookupByLibrary.simpleMessage("Tú número de celular"),
         "loginPlaceholder": MessageLookupByLibrary.simpleMessage(
             "Introduce tu número de móvil"),
         "loginTitle": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nos pondremos en contacto con usted por correo electrónico lo antes posible."),
         "successTitle":
             MessageLookupByLibrary.simpleMessage("Formulario enviado"),
+        "textCountryPhone": MessageLookupByLibrary.simpleMessage(
+            "Selecciona el país del celular"),
         "textFlow1_1":
             MessageLookupByLibrary.simpleMessage("Servicio internacional"),
         "textFlow1_2": MessageLookupByLibrary.simpleMessage(
@@ -108,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Centro de ayuda"),
         "textPhone": MessageLookupByLibrary.simpleMessage(
             "Introduce tu número de teléfono"),
+        "textPhoneRecharge":
+            MessageLookupByLibrary.simpleMessage("Celular de la recarga"),
+        "textRegisterTitle": MessageLookupByLibrary.simpleMessage(
+            "Registrate para hacer recargas más rápido"),
         "titlePass":
             MessageLookupByLibrary.simpleMessage("recupera tu contraseña"),
         "verTodo": MessageLookupByLibrary.simpleMessage("Ver todo")

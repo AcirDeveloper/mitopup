@@ -1,10 +1,21 @@
+// ignore_for_file: avoid_print
+
+/*
+  TODO: 1. Imagen de pais ya cargada
+        2. Logica del boton de ingresar que nos llevaria a la pantalla pin
+*/
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:mitopup/config/modals/show_register_sheet.dart';
+import 'package:mitopup/presentation/screens/screens.dart';
 
 import '../../../config/config.dart';
+import '../../../data/data.dart';
 import '../../../generated/l10n.dart';
+import '../../widgets/shared/pins.dart';
 import '../../widgets/widgets.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,8 +27,108 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController textFieldController = TextEditingController();
+class _LoginScreenState extends State<LoginScreen>
+    with SingleTickerProviderStateMixin {
+  CountryEntity? selectedCountry;
+  List<CountryEntity> countries = [];
+  TextEditingController phoneNumberController = TextEditingController();
+  bool isPhoneNumberFilled = false;
+  bool isBottomSheetOpen = false;
+  bool isLoading = false;
+  late Animation<Offset> slideAnimation;
+  late AnimationController animationController;
+  late Animation<Offset> logoOffset;
+  late Animation<double> animation;
+  int bottomSheetContextIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchSelectedCountry(1);
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2000),
+    );
+    slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0),
+      end: const Offset(0, -0),
+    ).animate(animationController);
+    logoOffset = Tween<Offset>(
+      begin: Offset.zero,
+      end: Offset.zero,
+    ).animate(animationController);
+    animation = Tween<double>(begin: 0, end: 1).animate(animationController);
+    animationController.forward();
+  }
+
+  Future<void> fetchSelectedCountry(int countryId) async {
+    try {
+      final fetchedCountry =
+          await CountryServices.fetchSelectedCountry(countryId);
+      setState(() {
+        selectedCountry = fetchedCountry;
+      });
+    } catch (error) {
+      // Manejar el error aquí
+      print('Error: $error');
+    }
+  }
+
+  void updateBottomSheetState(bool isBottomSheetOpen) {
+    setState(() {
+      isBottomSheetOpen = false;
+    });
+  }
+
+  void updateBottomSheetContextIndex(int newIndex) {
+    setState(() {
+      bottomSheetContextIndex = newIndex;
+    });
+  }
+
+  void _openCountrySelectionPage() async {
+    final selected = await Navigator.push<CountryEntity>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CountrySelectionScreen(
+          countries: countries,
+          selectedCountry: selectedCountry,
+        ),
+      ),
+    );
+    if (selected != null) {
+      fetchSelectedCountry(selected.idCountry);
+    }
+  }
+
+  void _checkPhoneNumberField() {
+    final phoneNumber =
+        phoneNumberController.text.replaceAll(RegExp(r'[^0-9]'), '');
+    final previousSelection = phoneNumberController.selection;
+    setState(() {
+      final requiredDigits = selectedCountry?.digits ?? 0;
+      isPhoneNumberFilled = phoneNumber.length >= requiredDigits;
+      phoneNumberController.text = phoneNumber;
+    });
+    phoneNumberController.selection = previousSelection;
+  }
+
+  void _navigateToLogin() {
+    final String idPais = selectedCountry?.idCountry.toString() ?? '';
+    final String phoneNumber = phoneNumberController.text;
+    print('Recharge made for the country $idPais y number $phoneNumber');
+
+    final phoneNumberInput = PhoneNumber.dirty(phoneNumber);
+
+    if (phoneNumberInput.isValid) {
+      // await Future.delayed(const Duration(seconds: 2));
+      GoRouter.of(context).go('/login/pin/$phoneNumber/$idPais');
+      print('Phone number: ${phoneNumberInput.value}');
+    } else {
+      print('Error: ${phoneNumberInput.errorMessage}');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                Literals.of(context).btnCel,
+                                capitalize(Literals.of(context).loginHint),
                                 style: TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
@@ -70,8 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Flexible(
                                 flex: 2,
                                 child: ElevatedButton(
-                                  onPressed: () {},
-                                  //_openCountrySelectionPage,
+                                  onPressed: _openCountrySelectionPage,
                                   style: ElevatedButton.styleFrom(
                                     padding: const EdgeInsets.all(8.0),
                                     backgroundColor: Colors.transparent,
@@ -86,32 +196,35 @@ class _LoginScreenState extends State<LoginScreen> {
                                     minimumSize: const Size(double.infinity,
                                         60.0), // Aumenta la altura del botón
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.network(
-                                        'http://5.78.79.129:8080/files/106-1-bandera/mex.png',
-                                        // selectedCountry?.flagUrl ?? '',
-                                        width: 40.0,
-                                        height: 40.0,
-                                        fit: BoxFit.contain,
-                                      ),
-                                      const SizedBox(width: 4.0),
-                                      Text(
-                                        'ES',
-                                        // selectedCountry?.code ?? '',
-                                        style: TextStyle(
-                                          color: HexColor("#34405F"),
-                                          fontSize: 18,
+                                  child: Container(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        if (selectedCountry?.flag != null &&
+                                            selectedCountry?.flag != '')
+                                          Image.network(
+                                            selectedCountry?.flag ?? '',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        const SizedBox(width: 4.0),
+                                        Text(
+                                          selectedCountry?.countryCode ?? '',
+                                          style: TextStyle(
+                                            color: HexColor("#34405F"),
+                                            fontSize: 18,
+                                          ),
                                         ),
-                                      ),
-                                      Icon(
-                                        Icons.keyboard_arrow_down,
-                                        color: HexColor(
-                                            "#34405F"), // Cambia el color del icono
-                                      ),
-                                    ],
+                                        Icon(
+                                          Icons.keyboard_arrow_down,
+                                          color: HexColor(
+                                              "#34405F"), // Cambia el color del icono
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -119,10 +232,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               Flexible(
                                 flex: 4,
                                 child: TextField(
-                                  controller: SearchController(),
-                                  onChanged: (value) {
-                                    // _checkPhoneNumberField();
-                                  },
+                                  controller: phoneNumberController,
+                                  onChanged: (value) =>
+                                      _checkPhoneNumberField(),
+                                  // Todo: Crear el error message
                                   keyboardType: TextInputType.phone,
                                   inputFormatters: [
                                     FilteringTextInputFormatter.digitsOnly
@@ -152,12 +265,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: double.infinity,
                             child: BlueButton(
                               onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => const PinScreen(),
-                                  ),
-                                );
+                                // Lógica para manejar el botón "Ingresar" GoRouter
+                                _navigateToLogin();
                               },
+                              isFilled: isPhoneNumberFilled,
                               buttonText:
                                   capitalize(Literals.of(context).btnGetInto),
                             ),
@@ -205,26 +316,42 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(
                             width: double.infinity,
                             child: OutlineButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                                showRegisterModal(
+                                  context,
+                                  () {},
+                                  updateBottomSheetContextIndex,
+                                  slideAnimation,
+                                  animationController,
+                                );
+                              },
                               buttonText:
                                   capitalize(Literals.of(context).btnRegister),
                             ),
                           ),
                           const SizedBox(height: 16.0),
                           SizedBox(
-                              width: double.infinity,
-                              height: 50.0,
-                              child: Material(
+                            width: double.infinity,
+                            height: 50.0,
+                            child: Material(
+                              elevation: 0,
+                              child: WhiteButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  showRechargesBottomSheet(
+                                    context,
+                                    () {},
+                                    updateBottomSheetContextIndex,
+                                    slideAnimation,
+                                    animationController,
+                                  );
+                                },
+                                buttonText: Literals.of(context).btnTopUp,
                                 elevation: 0,
-                                child: WhiteButton(
-                                  onPressed: () {
-                                    GoRouter.of(context)
-                                        .goNamed(LoginScreen.name);
-                                  },
-                                  buttonText: Literals.of(context).btnTopUp,
-                                  elevation: 0,
-                                ),
-                              )),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

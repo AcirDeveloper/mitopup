@@ -57,6 +57,7 @@ class InitialSlideWidget extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         BlueButton(
+          isFilled: true,
           onPressed: () {
             animationController.forward();
             showGetInto(

@@ -3,8 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 
 import 'package:mitopup/generated/l10n.dart';
-
-import '../../../domain/data.dart';
+import '../../../data/data.dart';
 
 // RechargesEntitys
 
