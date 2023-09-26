@@ -93,11 +93,11 @@ class _RecoveryPassScreenState extends State<RecoveryPassScreen> {
         if (responseData == 'OK') {
           // Login successful, navigate to DashboardScreen
           // ignore: use_build_context_synchronously
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const Dashboard(userId: "4")),
-          );
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(
+          //       builder: (context) => const Dashboard(userId: "4")),
+          // );
         } else {
           // PIN is incorrect
           // ignore: use_build_context_synchronously

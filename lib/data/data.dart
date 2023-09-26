@@ -3,6 +3,7 @@ export './entities/country_entity.dart';
 export './entities/contact_entity.dart';
 export './entities/help_entity.dart';
 export './entities/recharges_entity.dart';
-export './repositories/users_repository.dart';
+export './entities/promos_entity.dart';
 export './services/country_services.dart';
 export './services/help_services.dart';
+export './services/contact_services.dart';

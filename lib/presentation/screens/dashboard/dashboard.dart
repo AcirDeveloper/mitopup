@@ -2,18 +2,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:mitopup/presentation/screens/dashboard/home_dashboard.dart';
 import 'dart:convert';
 
 import '../../../config/config.dart';
+import '../../../data/services/user_services.dart';
+import '../recharges/recharges_dashboard.dart';
 import '../screens.dart';
 
 // Todo: Contactos
 
 class Dashboard extends StatefulWidget {
   static const String name = 'dashboard-screen';
-  final String userId;
 
-  const Dashboard({super.key, required this.userId});
+  const Dashboard({super.key});
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -23,24 +25,21 @@ class _DashboardState extends State<Dashboard> {
   int _currentIndex = 0;
   String _userName = '';
 
-  void _changePage(int index) {
+  void changePage(int index) {
     setState(() {
       _currentIndex = index;
     });
   }
 
-  Future<void> _fetchUserData(String userId) async {
-    final url =
-        Uri.parse('http://5.78.79.129:8080/app.getUserName?userId=$userId');
-    final response = await http.get(url);
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      print("Respuesta del servidor para _fetchUserData: $data");
+  Future<void> fetchUserData(String userId) async {
+    try {
+      final userData = await UserServices.fetchUserData(userId);
       setState(() {
-        _userName = data[0]['nombre']?.toString() ?? '';
+        _userName = userData['userName'] ?? '';
       });
-    } else {
-      throw Exception('Error al obtener los datos del usuario del webservice');
+    } catch (e) {
+      print('Error fetching user data: $e');
+      // Maneja el error aquí
     }
   }
 
@@ -48,7 +47,7 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _fetchUserData(widget.userId);
+      // _fetchUserData();
     });
   }
 
@@ -59,10 +58,12 @@ class _DashboardState extends State<Dashboard> {
         index: _currentIndex,
         children: const [
           Center(
-            child: Placeholder(),
+            child: HomeDashboard(),
           ),
           Center(
-            child: RechargesScreen(),
+            child: RechargesDashboard(
+              userId: '43',
+            ),
           ),
           Center(
             child: PromosScreen(),
@@ -86,9 +87,9 @@ class _DashboardState extends State<Dashboard> {
   }
 }
 
-void main() {
-  String userId = '43';
-  runApp(MaterialApp(
-    home: Dashboard(userId: userId),
-  ));
-}
+// void main() {
+//   String userId = '43';
+//   runApp(MaterialApp(
+//     home: Dashboard(userId: userId),
+//   ));
+// }

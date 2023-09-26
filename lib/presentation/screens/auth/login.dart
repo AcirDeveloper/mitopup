@@ -73,8 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
           // Login successful, navigate to DashboardScreen
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(
-                builder: (context) => const Dashboard(userId: "4")),
+            MaterialPageRoute(builder: (context) => const Dashboard()),
           );
         } else {
           // PIN is incorrect

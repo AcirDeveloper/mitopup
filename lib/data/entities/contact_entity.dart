@@ -1,17 +1,17 @@
 class ContactEntity {
-  final String idContact;
+  final int? idContact;
   final String nameContact;
   final String codeCountry;
   final String phoneContact;
-  final int idUser;
+  final int? idUser;
   final String colorContact;
 
   ContactEntity({
-    required this.idContact,
+    this.idContact,
     required this.nameContact,
     required this.codeCountry,
     required this.phoneContact,
-    required this.idUser,
+    this.idUser,
     required this.colorContact,
   });
 }

@@ -264,10 +264,15 @@ class _LoginScreenState extends State<LoginScreen>
                           SizedBox(
                             width: double.infinity,
                             child: BlueButton(
-                              onPressed: () {
-                                // Lógica para manejar el botón "Ingresar" GoRouter
-                                _navigateToLogin();
+                              onPressed: () => {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Dashboard(),
+                                  ),
+                                ),
                               },
+                              // Todo: Lógica para manejar el botón "Ingresar" GoRouter
+                              // _navigateToLogin();
                               isFilled: isPhoneNumberFilled,
                               buttonText:
                                   capitalize(Literals.of(context).btnGetInto),

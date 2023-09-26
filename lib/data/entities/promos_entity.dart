@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 class PromosEntity {
   final String idPromo;
   final String bgColor;
-  final Icon iconPromo;
+  final String iconPromo;
   final String amount;
   final String description;
   final String validity;

@@ -4,6 +4,7 @@ export 'contacts/edit_contact.dart';
 export 'contacts/new_contact.dart';
 export 'country/country_selection.dart';
 export 'dashboard/dashboard.dart';
+export 'dashboard/items/promos_items.dart';
 export 'help/help_form.dart';
 export 'home/initial_screen.dart';
 export 'home/steps.dart';

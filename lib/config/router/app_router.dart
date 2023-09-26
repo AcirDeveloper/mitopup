@@ -28,7 +28,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/dashboard',
       name: Dashboard.name,
-      builder: (context, state) => const Dashboard(userId: '1'),
+      builder: (context, state) => const Dashboard(),
     ),
 
     GoRoute(

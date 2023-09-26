@@ -7,17 +7,17 @@ import '../../../data/data.dart';
 
 // RechargesEntitys
 
-class RecargasDash extends StatefulWidget {
+class RechargesDashboard extends StatefulWidget {
   static const String name = 'recharges_screen';
   final String userId;
 
-  const RecargasDash({super.key, required this.userId});
+  const RechargesDashboard({super.key, required this.userId});
 
   @override
-  RecargasDashState createState() => RecargasDashState();
+  RechargesDashboardState createState() => RechargesDashboardState();
 }
 
-class RecargasDashState extends State<RecargasDash> {
+class RechargesDashboardState extends State<RechargesDashboard> {
   List<RechargesEntity> recargas = [];
   String ordenSeleccionado = 'Más recientes';
   List<String> monthTitles = []; // Lista para almacenar títulos de mes

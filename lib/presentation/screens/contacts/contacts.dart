@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'dart:math';
 import '../../../config/config.dart';
 import '../../../data/data.dart';
+import '../../../generated/l10n.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
@@ -16,33 +17,33 @@ class Contacts extends StatefulWidget {
 }
 
 class _ContactsState extends State<Contacts> {
-  List<ContactEntity> _contactos = [];
-  bool _isLoading = true;
+  List<ContactEntity> contacts = [];
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      const idUsuario =
-          "4"; // Cambiado a String, como se usa en el _fetchContactos
-      _fetchContactos(idUsuario);
+      const idUser =
+          "35"; // Cambiado a String, como se usa en el _fetchContactos
+      loadContacts(idUser);
     });
   }
 
-  Future<void> _fetchContactos(String idUsuario) async {
-    final url = Uri.parse(
-        'http://5.78.79.129:8080/app.getContactos?idUsuario=$idUsuario');
-    final response = await http.get(url);
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      List<ContactEntity> contactos = [];
+  Future<void> loadContacts(String idUser) async {
+    setState(() {
+      isLoading = true;
+    });
 
+    try {
+      final loadedContacts = await ContactServices.fetchContacts(idUser);
       setState(() {
-        _contactos = contactos;
-        _isLoading = false;
+        contacts = loadedContacts;
+        isLoading = false;
       });
-    } else {
-      throw Exception('Error al obtener los contactos del webservice');
+    } catch (e) {
+      print('Error loading contacts: $e');
+      // Maneja el error de carga aquí
     }
   }
 
@@ -50,7 +51,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: LightAppBarAyuda(
-        title: 'ejemplo', //Literals.of(context).contacts,
+        title: Literals.of(context).contacts,
         leadingOnPressed: () {
           Navigator.pop(context);
         },
@@ -60,7 +61,7 @@ class _ContactsState extends State<Contacts> {
         child: Wrap(
           spacing: 10, // Espacio horizontal entre los contactos
           runSpacing: 10, // Espacio vertical entre las filas de contactos
-          children: _contactos.map((contacto) {
+          children: contacts.map((contact) {
             final randomColor = getRandomColor();
             return Container(
               width: 80,
@@ -69,20 +70,20 @@ class _ContactsState extends State<Contacts> {
                   CircleAvatar(
                     backgroundColor: HexColor(randomColor),
                     child: Text(
-                      contacto.nameContact.substring(0, 1).toUpperCase(),
+                      contact.nameContact.substring(0, 1).toUpperCase(),
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    contacto.nameContact,
+                    contact.nameContact,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
                   Text(
-                    contacto.idContact.toString(),
+                    contact.idContact.toString(),
                     style: const TextStyle(
                       fontSize: 12,
                       color: Colors.grey,
